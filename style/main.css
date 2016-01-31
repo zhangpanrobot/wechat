@@ -98,11 +98,15 @@ body {
 }
 .share_btn_img {
   margin: 0 auto;
-  width: 50%;
+  width: 100%;
   margin-top: -20px;
+  position: absolute;
+  bottom: 100px;
 }
 #share_link{
   display: block;
+  width: 50%;
+  margin: 0 auto;
 }
 .result_content {
   position: absolute;
@@ -3281,4 +3285,12 @@ b{
 }
 .modal img{
   width: 100%;
+}
+
+.banner{
+  overflow: hidden;
+}
+#result-title{
+  display: inline-block;
+  vertical-align: -20px;
 }

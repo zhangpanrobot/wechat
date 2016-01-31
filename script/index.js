@@ -3,7 +3,7 @@ var nickname = userInfo && userInfo.nickname
 if (!userInfo || userInfo == 'undefined' || !nickname) {
   userInfo = {
     "openid": "ofFh1t72qWRyN8V86w8qagrnBt68",
-    "nickname": "MH",
+    "nickname": "",
     "sex": 1,
     "language": "en",
     "city": "海淀",
