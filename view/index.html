@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-touch-fullscreen" content="yes">
+  <meta name="full-screen" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="format-detection" content="address=no">
+  <title>我的朋友圈</title>
+  <link href="http://s.juancdn.com/jpwebapp/css/style_v3.css?ts=08d33f1faffefc63_1452253119" rel="stylesheet" type="text/css" />
+  <link href="http://s.juancdn.com/jpwebapp/css/pengyouquan/style.css?ts=08d33f1faffefc63_1452253119" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="../style/main.css">
+  <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+</head>
+<body>
+  <!-- 主体 -->
+  <header class="_show">
+    <img src="http://s.juancdn.com/jpwebapp/images/pengyouquan/bg.jpg" id="bg">
+    <p class="data-name" id="user-name"></p>
+    <img src="" class="data-avt" id="avt">
+  </header>
+  <div class="main">
+
+    <!-- <div class="normal_loading" style="display:block;position:static">
+            <div class="box other">
+                <div class="loading show">
+                    <img class="stars" src="http://s.juancdn.com/jpwebapp/images/icon/stars.png" style="width:36px;">
+                    <div class="shade"></div>
+                </div>
+                <p class="txt">正在加载中...</p>
+            </div>
+        </div> -->
+
+    <div id="list" class="_show">
+      <ul id="man">
+        <friend-list :data-list="dataList"></friend-list>
+      </ul>
+    </div>
+    <div id="share" class="_show">
+      <a href=''>我也要测</a>
+      <a>分享到朋友圈</a>
+      <p>（此朋友圈纯属虚构）</p>
+    </div>
+    <div class="hide" id="guide"></div>
+  </div>
+  <script src="../dist/vue.min.js"></script>
+  <script src="../dist/dist.js"></script>
+  <!-- 微信分享配置 -->
+  <script type="text/javascript">
+    // wx.config({
+    //   debug: true, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
+    //   appId: "wx693582460d15cb5e", // 必填，公众号的唯一标识
+    //   timestamp: "1452366411", // 必填，生成签名的时间戳
+    //   nonceStr: "7iuTsc4bRO8GnXWI", // 必填，生成签名的随机串
+    //   signature: "72358df792bdd9fd9d834f9479617e8a31c93f4c", // 必填，签名，见附录1
+    //   jsApiList: ['onMenuShareAppMessage', 'onMenuShareQQ', 'onMenuShareTimeline', 'hideOptionMenu', 'chooseWXPay', 'showMenuItems'] // 必填，需要使用的JS接口列表，所有JS接口列表见附录2
+    // });
+  </script>
+  </div>
+</body>
+</html>

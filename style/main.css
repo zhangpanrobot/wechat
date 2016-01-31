@@ -1,0 +1,178 @@
+body {
+  margin: 0;
+}
+.toast {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin-left: -120px;
+  margin-top: -25px;
+  height: 50px;
+  width: 240px;
+  line-height: 50px;
+  z-index: 100;
+  text-align: center;
+  border-radius: 4px;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+  -webkit-transition: opacity 0.3s ease;
+  color: #fff;
+  background-color: rgba(51, 51, 51, 0.8);
+}
+.shake {
+  background-image: url(../img/bg.jpg);
+  -webkit-background-size: cover;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.result {
+  position: relative;
+}
+.result>img {
+  width: 100%;
+}
+.container {
+  text-align: center;
+  position: relative;
+  display: none;
+}
+.container img {
+  display: block;
+  max-width: 100%;
+}
+.chunwan {
+  width: 80%;
+  margin: 10px auto;
+}
+.test_1 {
+  width: 60%;
+  margin: 10px auto;
+}
+.shake_circle {
+  background-image: url(../img/circle.png);
+  -webkit-background-size: cover;
+  background-size: cover;
+  width: 131px;
+  height: 131px;
+  margin: 0 auto;
+}
+.shake_hand {
+  display: inline-block;
+  background-image: url(../img/hand.png);
+  background-repeat: no-repeat;
+  -webkit-background-size: contain;
+  background-size: contain;
+  width: 62px;
+  height: 103px;
+  margin-top: 20px;
+  -webkit-transform: rotate(-15deg);
+  transform: rotate(-15deg);
+}
+.hand-animate {
+  -webkit-animation: hand_move infinite 2s;
+  animation: hand_move infinite 2s;
+}
+@-webkit-keyframes hand_move {
+  0% {
+    -webkit-transform: rotate(-15deg);
+    transform: rotate(-15deg);
+  }
+  50% {
+    -webkit-transform: rotate(15deg);
+    transform: rotate(15deg);
+  }
+  100% {
+    -webkit-transform: rotate(-15deg);
+    transform: rotate(-15deg);
+  }
+}
+.newyear_title {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+}
+.newyear_title img {
+  display: block;
+  margin: 0 auto 10px;
+  width: 60%;
+}
+.share_btn_img {
+  margin: 0 auto;
+  width: 50%;
+  margin-top: -20px;
+}
+.result_content {
+  position: absolute;
+  top: 15%;
+  width: 100%;
+  height: 100%;
+}
+.deng {
+  width: 100%;
+  position: relative;
+}
+.deng img {
+  width: 80%;
+  margin: 0 auto;
+}
+.deng .content {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  color: #fff;
+}
+.deng h1 {
+  margin: 0;
+  font-size: 24px;
+  height: 50%;
+}
+.deng p {
+  margin: 0;
+  height: 50%;
+}
+.result_p {
+  font-size: 24px;
+}
+i {
+  font-style: normal;
+}
+.hot_font {
+  color: #900000;
+}
+.loading {
+  position: absolute;
+  top: 240px;
+  left: 50%;
+  margin-left: -50px;
+  width: 100px;
+  height: 100px;
+  background: url(../img/spinner.png) no-repeat;
+  background-size: 100px 100px;
+  opacity: 0;
+  -webkit-animation: loading infinite linear .5s;
+  animation: loading infinite linear .5s;
+  -webkit-transition: all .5s;
+  -moz-transition: all .5s;
+  -ms-transition: all .5s;
+  -o-transition: all .5s;
+  transition: all .5s;
+}
+@-webkit-keyframes loading {
+  0% {
+    -webkit-transform: rotate(0);
+    transform: rotate(0);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+.show{
+  display: block;
+  opacity: 1;
+}
+.cmt-list i{
+  color: #454545;
+}

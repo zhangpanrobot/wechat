@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-touch-fullscreen" content="yes">
+  <meta name="full-screen" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="format-detection" content="address=no">
+  <title>测一测</title>
+  <link rel="stylesheet" href="../style/main.css">
+</head>
+
+<body class="shake">
+  <div class="container show" id="present">
+    <div class="banner">
+      <img class="chunwan" src="../img/chunwan.png" alt="我要上春晚">
+      <img class="test_1" src="../img/test.png" alt="测一测">
+      <div class="shake_circle">
+        <span class="shake_hand hand-animate"></span>
+      </div>
+    </div>
+    <div class="newyear_title">
+      <img src="../img/monkeydancespring.png" alt="猴舞新春">
+    </div>
+  </div>
+  <div class="container" id="result">
+    <div class="result">
+      <img src="../img/light.png" alt="">
+      <div class="result_content">
+        <div class="deng"><img src="../img/deng.png" alt="">
+          <div class="content">
+            <h1><span id="result-title">哈哈</span></h1>
+            <p id="result-content">天生丽质难自弃, 天生丽质难自弃</p>
+          </div>
+        </div>
+        <p class="result_p"><span id="user_name">张攀</span><i class="hot_font">凭</i><span id="result-skill">逆天的颜值</span></p>
+        <img src="" alt="" class="result_img">
+        <div class="hot_font">天惹噜!听说你要上春晚
+          <br>朋友圈竟然变这样...</div>
+      </div>
+    </div>
+    <div class="share_btn_img"><a id="share_link" href=""><img src="../img/btn.png" alt=""></a></div>
+    <div class="newyear_title">
+      <img src="../img/monkeydancespring.png" alt="猴舞新春">
+    </div>
+  </div>
+  <div class="loading"></div>
+  <script type="text/javascript">
+    function $(selector) {
+      return document.querySelector(selector);
+    }
+    var screenHeight = Math.max(document.documentElement.clientHeight || window.innerHeight)
+    document.addEventListener('DOMContentLoaded', function() {
+      document.body.style.height = screenHeight + 'px';
+      document.querySelectorAll('.container')[0].style.height = screenHeight + 'px';
+      document.querySelectorAll('.container')[1].style.height = screenHeight + 'px';
+      var SHAKE_THRESHOLD = 800;
+      var last_update = 0;
+      var x = y = z = last_x = last_y = last_z = 0;
+
+      if (window.DeviceMotionEvent) {
+        window.addEventListener('devicemotion', deviceMotionHandler, false);
+      } else {
+        alert('您该换手机啦');
+      }
+
+      function deviceMotionHandler(eventData) {
+        if($('#result').className == 'container show') return;
+        var acceleration = eventData.accelerationIncludingGravity;
+        var curTime = new Date().getTime();
+
+        if ((curTime - last_update) > 100) {
+          var diffTime = curTime - last_update;
+          last_update = curTime;
+          x = acceleration.x;
+          y = acceleration.y;
+          z = acceleration.z;
+          var speed = Math.abs(x + y + z - last_x - last_y - last_z) / diffTime * 10000;
+          var status = document.getElementById("status");
+
+          if (speed > SHAKE_THRESHOLD) {
+            doResult();
+          }
+          last_x = x;
+          last_y = y;
+          last_z = z;
+        }
+      }
+    })
+    function doResult() {
+      $(".loading").className = "loading show";
+      setTimeout(function() {
+        $('#present').className = 'container'
+        $("#result").className = "container show";
+        $(".loading").className = "loading";
+      }, 1000);
+      var resultObj = shuffle(resultData, 1)[0];
+      $('#result-title').innerText = resultObj.title;
+      $('#result-content').innerText = resultObj.content;
+      $('#result-skill').innerText = resultObj.skill;
+    }
+    function shuffle(array, num) {
+      var currentIndex = array.length,
+        temporaryValue, randomIndex;
+      // While there remain elements to shuffle...
+      while (0 !== currentIndex) {
+        // Pick a remaining element...
+        randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex -= 1;
+        // And swap it with the current element.
+        temporaryValue = array[currentIndex];
+        array[currentIndex] = array[randomIndex];
+        array[randomIndex] = temporaryValue;
+      }
+      return array.slice(0, num);
+    }
+    var resultData = [{
+      title: '颜值',
+      content: '颜值这么高，怎么没人追？',
+      skill: '逆天的颜值'
+    }, {
+      title: '智商',
+      content: '尊敬的用户，您的2016年智商额度已不足!',
+      skill: '捉急的智商'
+    }, {
+      title: '人品',
+      content: '无意拔得头筹，奈何人品出众。',
+      skill: '出众的人品'
+    }, {
+      title: '才华',
+      content: '明明可以靠脸吃饭，却偏要靠才华。',
+      skill: '惊人的才华'
+    }, {
+      title: '国民老公',
+      content: '你竟然和思聪有一腿？妈蛋，还我老公!',
+      skill: '思聪老公'
+    }, {
+      title: '网红脸',
+      content: '你居然神似天王嫂？同一个医生做的吗？',
+      skill: '一张锥子脸'
+    }, {
+      title: '毒舌',
+      content: '金星接班人，靠一张嘴闯荡江湖!',
+      skill: '一张小毒舌'
+    }, {
+      title: '吐槽',
+      content: '弹幕小能手，你揍是吐槽帝!',
+      skill: '内心的神吐槽'
+    }, {
+      title: '颜艺',
+      content: '有了你的表情包，我们绝不会轻易狗带!',
+      skill: '放肆的颜艺'
+    }, {
+      title: '逗比',
+      content: '在逗比的世界里，你是当之无愧的王者!',
+      skill: '逗比精神'
+    }, {
+      title: '又雷又污',
+      content: '来追我啊，追上了我就和你嘿嘿嘿~',
+      skill: '一个大写的污'
+    }, {
+      title: '演技',
+      content: '人生如戏，全靠演技!',
+      skill: '精湛的演技'
+    }, {
+      title: '气质',
+      content: '上春晚这事儿，主要看气质!',
+      skill: '高雅的气质'
+    }];
+
+  </script>
+  <!-- <script src="../script/shake.js"></script> -->
+</body>
+
+</html>
