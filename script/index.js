@@ -554,7 +554,7 @@ var friendData = {
   }, {
     avatar: '../img/avatar/贾乃亮-头像.jpg', //头像url
     user_name: '贾乃亮', //用户名
-    content: '甜馨叫王源哥哥，叫{{nickname}}姐姐，王源和XX叫我亮哥，我是甜馨的爹……这辈儿咋这么乱？', //文字内容
+    content: '甜馨叫王源哥哥，叫{{nickname}}姐姐，王源和{{nickname}}叫我亮哥，我是甜馨的爹……这辈儿咋这么乱？', //文字内容
     imgs: ['../img/img_big/贾乃亮-配图.jpg'], //状态图片url
     post_time: '2小时前', //信息发送时间
     liked_list: ['王源', '李小璐', '周星驰', '易烊千玺', '王俊凯', '杜淳', '甘薇', '霍思燕', '秦岚'], //点赞列表
@@ -644,7 +644,7 @@ var friendData = {
   }, {
     avatar: '../img/avatar/彭姨-头像.jpg', //头像url
     user_name: '彭姨', //用户名
-    content: '翻旧照片，找到和{{nickname}}小时候的合影，那年他才2岁。今年小XX第一次登上春晚舞台，希望大家多多捧场。.', //文字内容
+    content: '翻旧照片，找到和{{nickname}}小时候的合影，那年他才2岁。今年小{{nickname}}第一次登上春晚舞台，希望大家多多捧场。.', //文字内容
     imgs: ['../img/img_big/彭姨-配图.jpg'], //状态图片url
     post_time: '2小时前', //信息发送时间
     liked_list: ['毕福剑', '朱军', '董卿', '周涛', '撒贝宁', '赵本山', '宋丹丹', '倪萍', '毛阿敏', '宋祖英', '赵忠祥', '姨夫'], //点赞列表
@@ -683,7 +683,7 @@ var friendData = {
     content: '在我之后，又将有一位女神级演员登上春晚舞台——{{nickname}}，我们的共同点就是：都有一个尖下巴！', //文字内容
     imgs: ['../img/img_big/盛一伦-配图.jpg'], //状态图片url
     post_time: '2小时前', //信息发送时间
-    liked_list: ['张天爱', '于朦胧', 'XX', '侣皓吉吉', '林更新', '何炅', '李维嘉'], //点赞列表
+    liked_list: ['张天爱', '于朦胧', '{{nickname}}', '侣皓吉吉', '林更新', '何炅', '李维嘉'], //点赞列表
     reply_list: [{
         content: '黄桑，你什么时候都帅！', //回复内容
         to: '{{nickname}}', //回复人姓名
@@ -894,6 +894,16 @@ var friendCircle = new Vue({
   ready() {
     getConfig();
     $('title').innerText = '听说' + userInfo.nickname + '要上春晚，朋友圈竟然变这样!';
+    $('#list').addEventListener('click', function(e){
+      var target = e.target;
+      if(target.className = 'list-img') {
+        $('.modal').className = 'modal';
+        $('.modal-container').innerHTML = '<img src=' + target.src + '>';
+      }
+    });
+    $('.modal').addEventListener('click', function(e) {
+      this.className = 'modal hide';
+    })
     //跳转至用户授权页
     $('#share a').addEventListener('click', function(e) {
       e.preventDefault();
