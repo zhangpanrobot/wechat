@@ -9,7 +9,7 @@
               <p v-if="data.isAd" class="ads">推广<img src="http://s.juancdn.com/jpwebapp/images/pengyouquan/ads.png" ></p>
               <p class="po-name">{{data.user_name}}</p>
               <div class="post"><p>
-                {{data.content}}
+                {{{data.content}}}
               </p>
                   <!-- <a href="http://mp.weixin.qq.com/s?__biz=MjM5MDk1NjY0MA==&mid=402311636&idx=2&sn=35581e3c9fca720903919a0e23bf4846#rd" class="ad-link">查看详情 <img src="http://s.juancdn.com/jpwebapp/images/pengyouquan/link.png"></a> -->
                   <img v-for="img in data.imgs" :src="img" class="list-img">
