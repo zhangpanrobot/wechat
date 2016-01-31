@@ -101,6 +101,9 @@ body {
   width: 50%;
   margin-top: -20px;
 }
+#share_link{
+  display: block;
+}
 .result_content {
   position: absolute;
   top: 15%;
