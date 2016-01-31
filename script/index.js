@@ -1,6 +1,5 @@
-var userInfo = paramParseObj(userInfo);
-var nickname = userInfo && userInfo !== 'undefined' && JSON.parse(userInfo).nickname
-console.log(nickname)
+var userInfo = paramParseObj('userInfo');
+var nickname = userInfo && userInfo.nickname
 if (!userInfo || userInfo == 'undefined' || !nickname) {
   userInfo = {
     "openid": "ofFh1t72qWRyN8V86w8qagrnBt68",
@@ -185,33 +184,33 @@ function getConfig() {
   // })
 }
 
-wx.onMenuShareTimeline({
-    title: '我要上春晚', // 分享标题
-    link: 'http://weixin.ezone.cn/view/index.html', // 分享链接
-    imgUrl: '', // 分享图标
-    success: function () {
-        // 用户确认分享后执行的回调函数
-
-    },
-    cancel: function () {
-        // 用户取消分享后执行的回调函数
-    }
-});
-
-wx.onMenuShareAppMessage({
-    title: '', // 分享标题
-    desc: '', // 分享描述
-    link: '', // 分享链接
-    imgUrl: '', // 分享图标
-    type: '', // 分享类型,music、video或link，不填默认为link
-    dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
-    success: function () {
-        // 用户确认分享后执行的回调函数
-    },
-    cancel: function () {
-        // 用户取消分享后执行的回调函数
-    }
-});
+// wx.onMenuShareTimeline({
+//     title: '我要上春晚', // 分享标题
+//     link: 'http://weixin.ezone.cn/view/index.html', // 分享链接
+//     imgUrl: '', // 分享图标
+//     success: function () {
+//         // 用户确认分享后执行的回调函数
+//
+//     },
+//     cancel: function () {
+//         // 用户取消分享后执行的回调函数
+//     }
+// });
+//
+// wx.onMenuShareAppMessage({
+//     title: '', // 分享标题
+//     desc: '', // 分享描述
+//     link: '', // 分享链接
+//     imgUrl: '', // 分享图标
+//     type: '', // 分享类型,music、video或link，不填默认为link
+//     dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
+//     success: function () {
+//         // 用户确认分享后执行的回调函数
+//     },
+//     cancel: function () {
+//         // 用户取消分享后执行的回调函数
+//     }
+// });
 
 
 var friendCircle = new Vue({
