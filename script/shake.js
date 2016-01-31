@@ -49,7 +49,10 @@ function paramParse(key) {
 
 var code = paramParse('code') //用户信息凭证
 var state = localStorage.getItem('state') //朋友圈效果页面存入的随机字符串
-if (!code || state !== paramParse('state')) {
+// if (!code || state !== paramParse('state')) {
+//   alert('授权失败, 请从朋友圈重新进入本页面')
+// }
+if(!code) {
   alert('授权失败, 请从朋友圈重新进入本页面')
 }
 

@@ -22,8 +22,8 @@
               <div class="like"><img src="http://s.juancdn.com/jpwebapp/images/pengyouquan/l.png"><span class="data-name"></span>{{data.liked_list}}</div>
               <div class="cmt-list">
                   <p v-for="reply_item in data.reply_list">
-                    <span v-if="reply_item.from">{{reply_item.from}}<i> 回复</i></span>
-                    <span>{{reply_item.to}}</span>：{{reply_item.content}}
+                    <span v-if="reply_item.from">{{reply_item.from}}<i> 回复 </i></span>
+                    <span>{{reply_item.to}}:</span>{{reply_item.content}}
                   </p>
               </div>
           </div>
