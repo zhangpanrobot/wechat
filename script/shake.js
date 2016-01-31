@@ -56,24 +56,29 @@ if(!code) {
   alert('授权失败, 请从朋友圈重新进入本页面')
 }
 
-
-
-var userInfo = {};
+var userInfo = localStorage.getItem('userInfo') && localStorage.getItem('userInfo') == 'undefined' && JSON.parse(localStorage.getItem('userInfo')) || {};
 
 //用code请求用户信息
 function getUserInfo() {
-  sendRequest('/getUserInfo.do?code=' + code, 'GET', '', function(data) {
-    if (!data.fail) {
-      data = JSON.parse(data)
-      if (data.errcode) return;
-      userInfo = data.data;
-      $('#user_name').innerText = userInfo.nickname;
-      //立即查看
-      $('#share_link').href = './index.html?userInfo=' + encodeURIComponent(JSON.stringify(userInfo))
-    } else {
-      alert('用户信息获取失败, 请从朋友圈重新进入本页面')
-    }
-  })
+  if(userInfo.nickname) {
+    $('#user_name').innerText = userInfo.nickname;
+    //立即查看
+    $('#share_link').href = './index.html?userInfo=' + encodeURIComponent(JSON.stringify(userInfo))
+  } else {
+    sendRequest('/getUserInfo.do?code=' + code, 'GET', '', function(data) {
+      if (!data.fail) {
+        data = JSON.parse(data)
+        if (data.errcode) return;
+        userInfo = data.data;
+        localStorage.setItem('userInfo', JSON.stringify(userInfo))
+        $('#user_name').innerText = userInfo.nickname;
+        //立即查看
+        $('#share_link').href = './index.html?userInfo=' + encodeURIComponent(JSON.stringify(userInfo))
+      } else {
+        alert('用户信息获取失败, 请从朋友圈重新进入本页面')
+      }
+    })
+  }
 }
 
 document.addEventListener('DOMContentLoaded', function() {
