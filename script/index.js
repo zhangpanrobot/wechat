@@ -766,7 +766,7 @@ var friendData = {
   ]
 };
 
-var listResult = shuffle(userInfo.sex ? friendData.man : friendData.women, 4);
+var listResult = shuffle(userInfo.sex == 1 ? friendData.man : friendData.women, 4);
 
 listResult.forEach((item) => {
   item.content = item.content && item.content.replace(/{{nickname}}/, userInfo.nickname)
