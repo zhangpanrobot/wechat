@@ -3148,7 +3148,7 @@ header{
 /*    float: left;*/
 }
 .list-img{
-    height: 80px;
+    max-width: 85%;
     padding-right: 10px;
 /*    float: left;*/
 /*    width: 28%*/
