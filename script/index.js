@@ -16,6 +16,7 @@ if (!userInfo || userInfo == 'undefined' || !nickname) {
 
 
 console.log(userInfo)
+
 function $(selector) {
   return document.querySelector(selector)
 }
@@ -147,29 +148,6 @@ var friendData = {
         to: '晓明'
       }] //回复列表
   }, {
-    avatar: '../img/avatar/孙俪-头像.jpg', //头像url
-    user_name: '俪姐', //用户名
-    content: '《芈月传2》和2016年春晚，你们更期待哪个？一个有我，一个有{{nickname}}，想好了再回答。', //文字内容
-    imgs: ['../img/img_big/孙俪-配图.jpg'], //状态图片url
-    post_time: '2小时前', //信息发送时间
-    liked_list: ['邓超', '何炅', '马苏', '刘涛', '春申君黄轩', '贾跃亭', '马化腾', '张朝阳', '马云', '{{nickname}}', '方中信'], //点赞列表
-    reply_list: [{
-        content: '娘娘，《芈月传2》给乐视独家版权吧！', //回复内容
-        to: '贾跃亭', //回复人姓名
-      }, {
-        content: '版权金要多少，尽管开口，小马哥必定拿下。', //回复内容
-        to: '马化腾' //被回复人姓名
-      }, {
-        content: '娘娘版权给优酷吧！送你一个淘宝钻石级VIP会员，全场无限额消费', //回复内容
-        to: '马云'
-      }, {
-        content: '当然是想看娘娘啦！娘娘千秋万代一统江湖！',
-        to: '何炅'
-      }, {
-        content: '最期待《芈月传2》，看我怎么玩转后宫！',
-        to: '马苏'
-      }] //回复列表
-  }, {
     avatar: '../img/avatar/周杰伦-头像.jpg', //头像url
     user_name: '周杰伦(工作)', //用户名
     content: '{{nickname}}听说你游戏打的不错哦，改天我们一起开黑双排吧~', //文字内容
@@ -283,6 +261,286 @@ var friendData = {
         to: '金星', //被回复人姓名
         from: '林更新'
       }] //回复列表
+  }, {
+    avatar: '../img/avatar/张燕-头像.jpg', //头像url
+    user_name: '张燕', //用户名
+    content: '二手货有什么好的', //文字内容
+    imgs: ['../img/img_big/张燕-配图.jpg'], //状态图片url
+    post_time: '2小时前', //信息发送时间
+    liked_list: ['张予曦', '张艺馨', '张歆艺', '姚笛', '王大治', '叶梓萱'], //点赞列表
+    reply_list: [{
+      content: '爱过，恨过，只怪我们错过。', //回复内容
+      to: '姚笛', //回复人姓名
+    }, {
+      content: '妹，哥懂你心里的苦，哪天找你好好唠唠心里话。', //回复内容
+      to: '王大治' //被回复人姓名
+    }, {
+      content: '小燕，别闹心了，改天约上姐妹们一起唱K', //回复内容
+      to: '叶梓萱'
+    }, {
+      content: '谢谢哥',
+      to: '王大治',
+      from: '张燕'
+    }]
+  }, {
+    avatar: '../img/avatar/王思聪-头像.jpg', //头像url
+    user_name: '王思聪', //用户名
+    content: '欠快播会员的各位亲赶紧来补！', //文字内容
+    imgs: ['../img/img_big/王思聪-配图-b.jpg'], //状态图片url
+    post_time: '2小时前', //信息发送时间
+    liked_list: ['杨颖', '陈赫', '贾乃亮', '邓超', '大鹏', '林更新', '张馨予', '张予曦', '叫兽易小星'], //点赞列表
+    reply_list: [{
+      content: '快播是什么？', //回复内容
+      to: '易烊千玺', //回复人姓名
+    }, {
+      content: '爱过。', //回复内容
+      to: '大鹏' //被回复人姓名
+    }, {
+      content: '管你卵事', //回复内容
+      to: '陈赫'
+    }, {
+      content: '快播你有股份啊？',
+      to: '林更新'
+    }, {
+      content: '你个傻X',
+      to: '林更新',
+      from: '王思聪'
+    }]
+  }, {
+    avatar: '../img/avatar/苍井空-头像.jpg', //头像url
+    user_name: '苍井空', //用户名
+    content: '微信的新功能，蛮有趣的呢', //文字内容
+    imgs: ['../img/img_big/苍井空-配图.jpg'], //状态图片url
+    post_time: '2小时前', //信息发送时间
+    liked_list: ['100000+人看了照片'], //点赞列表
+    reply_list: [{
+      content: '打码的毛片儿我都不看，我看打码的自拍？', //回复内容
+      to: '王思聪', //回复人姓名
+    }, {
+      content: '已经刷不起朋友圈了……', //回复内容
+      to: '林更新' //被回复人姓名
+    }]
+  }, {
+    avatar: '../img/avatar/张天爱-头像.jpg', //头像url
+    user_name: '芃芃哥', //用户名
+    content: '宝贝儿，你就是那春茶，我就是那刚烧开的水，我想泡你啊！', //文字内容
+    imgs: ['../img/img_big/张天爱-配图.jpg'], //状态图片url
+    post_time: '2小时前', //信息发送时间
+    liked_list: ['贾跃亭', '甘薇', '盛一伦', '侣皓吉吉', '海铃', '江奇霖'], //点赞列表
+    reply_list: [{
+      content: '太子妃重播上线啦', //回复内容
+      to: '贾跃亭', //回复人姓名
+    }, {
+      content: '一个大写、加粗的污！', //回复内容
+      to: '{{nickname}}' //被回复人姓名
+    }, {
+      content: '太污了！但是，朕心悦！', //回复内容
+      to: '盛一伦' //被回复人姓名
+    }, {
+      content: '秀恩爱，死得快！', //回复内容
+      to: '盛一伦', //被回复人姓名
+      from: '于朦胧'
+    }, {
+      content: '秀恩爱，死得快！', //回复内容
+      to: '盛一伦', //被回复人姓名
+      from: '郭俊辰'
+    }, {
+      content: '秀恩爱，死得快！', //回复内容
+      to: '盛一伦', //被回复人姓名
+      from: '绿王'
+    }, {
+      content: '上春晚了不起哈？等着哥去壁咚你！', //回复内容
+      to: '{{nickname}}', //被回复人姓名
+      from: '芃芃哥'
+    }, {
+      content: '害羞', //回复内容
+      from: '{{nickname}}', //被回复人姓名
+      to: '芃芃哥'
+    }]
+  }, {
+    avatar: '../img/avatar/陈赫-头像.jpg', //头像url
+    user_name: '陈赤赤', //用户名
+    content: '【给本天才一条广告的时间】天霸动霸Tuà终于变成实物能让天才们抱回家啦，不论你是天才还是学霸都该拥有属于自己态度的潮物，Tuà就是屌炸天！无论是Tuà字基本款T恤还是撞色特别款，都是回馈给天才们最好品质的新年礼物！还有最新【添财】系列全新上线！我已经穿上啦，你们的呢？', //文字内容
+    imgs: ['../img/img_big/陈赫-配图.jpg'], //状态图片url
+    post_time: '2小时前', //信息发送时间
+    liked_list: ['张梓萱', '郑恺', '李晨', '杨颖', '邓超', '鹿晗'], //点赞列表
+    reply_list: [{
+      content: '天天刷屏卖衣服，你烦不烦？', //回复内容
+      to: '杨颖', //回复人姓名
+    }, {
+      content: '天天刷屏卖衣服，你烦不烦？', //回复内容
+      to: '孙艺洲' //被回复人姓名
+    }, {
+      content: '天天刷屏卖衣服，你烦不烦？', //回复内容
+      to: '李晨' //被回复人姓名
+    }, {
+      content: '天天刷屏卖衣服，你烦不烦？', //回复内容
+      to: '邓超', //被回复人姓名
+      from: ''
+    }, {
+      content: '天天刷屏卖衣服，你烦不烦？', //回复内容
+      to: '李佳航', //被回复人姓名
+      from: ''
+    }, {
+      content: '已屏蔽', //回复内容
+      to: '娄艺潇', //被回复人姓名
+      from: ''
+    }]
+  }, {
+    avatar: '../img/avatar/金星-头像.jpg', //头像url
+    user_name: '金星', //用户名
+    content: '美猴王不让上，什么乱七八糟的反而都上了。他都57了，下一个猴年他可能就耍不了猴戏了，这会儿你们怎么看不见他的努力啊？语言类节目这么少，开心麻花被砍掉，美猴王也不请，吉祥物还那么丑，导演你咋不上天？你咋不上西天呢？！', //文字内容
+    imgs: ['../img/img_big/金星-配图.jpg'], //状态图片url
+    post_time: '2小时前', //信息发送时间
+    liked_list: ['韩红', '冯小刚', '李小璐', '孟非', '贾乃亮', '王自健', '郭德纲'], //点赞列表
+    reply_list: [{
+      content: '今年我也上春晚……', //回复内容
+      to: '于谦', //回复人姓名
+    }, {
+      content: '她说的就是你！', //回复内容
+      to: '于谦', //被回复人姓名
+      from: '郭德纲'
+    }, {
+      content: '还有三年就到猪年了，答应我，你们的热情不要过去好吗', //回复内容
+      to: '马德华', //被回复人姓名
+    }, {
+      content: '几代人的情怀……猴年不让猴王上春晚，也是醉了', //回复内容
+      to: '孟非', //被回复人姓名
+      from: ''
+    }, {
+      content: '甜馨挚爱的孙悟空啊！金星姐，能给安排甜馨见见她偶像不？', //回复内容
+      to: '李小璐', //被回复人姓名
+      from: ''
+    }, {
+      content: '多想一到零点时，金门大开，六小龄童穿着战甲，戴着雉毛翎 ，耍着金箍棒大喊', //回复内容
+      to: '王自健', //被回复人姓名
+      from: ''
+    }, {
+      content: '俺老孙来也，想想就能泪奔。', //回复内容
+      to: '一声' //被回复人姓名
+    }, {
+      content: '我将参加中央电视台春节戏曲晚会，暂定大年初三播出，欢迎大家收看。', //回复内容
+      to: '六小龄童', //被回复人姓名
+      from: ''
+    }, {
+      content: '我就喜欢你看不惯我，却不得不和我一同建设中国特色社会主义的样子。', //回复内容
+      to: '{{nickname}}', //被回复人姓名
+      from: ''
+    }, {
+      content: '给你脸了！', //回复内容
+      to: '{{nickname}}', //被回复人姓名
+      from: '金星'
+    }]
+  }, {
+    avatar: '../img/avatar/郭德纲-头像.jpg', //头像url
+    user_name: '郭德纲', //用户名
+    content: '欢乐喜剧人第二季，希望大家支持。即使不上春晚，也可以让您笑口常开。', //文字内容
+    imgs: ['../img/img_big/郭德纲-配图.jpg'], //状态图片url
+    post_time: '2小时前', //信息发送时间
+    liked_list: ['{{nickname}}', '岳云鹏', '孙越', '小沈阳', '杨树林', '艾伦', '王宁', '沈腾', '马丽', '贾玲', '唐从圣', '赵正平', '吴秀波', '宋丹丹', '冯小刚'], //点赞列表
+    reply_list: [{
+      content: '师父多年位春晚输送相声人才，多少人的勋章都有您的一半！', //回复内容
+      to: '岳云鹏', //回复人姓名
+    }, {
+      content: '虽然节目不可能让所有观众都满意，但是我们对节目的诚意是十足的，我的搞笑是认真的！', //回复内容
+      to: '小沈阳', //被回复人姓名
+      from: ''
+    }, {
+      content: '郭老板这张照片，显得脸挺瘦啊', //回复内容
+      to: '冯小刚' //被回复人姓名
+    }, {
+      content: '作为东北F4，小沈阳你可别给我们丢人啊', //回复内容
+      to: '小沈阳', //被回复人姓名
+      from: '尼古拉斯赵四'
+    }, {
+      content: '这一季主持人颜值略低啊', //回复内容
+      to: '吴秀波', //被回复人姓名
+      from: ''
+    }]
+  }, {
+    avatar: '../img/avatar/胡歌-头像.jpg', //头像url
+    user_name: '胡歌', //用户名
+    content: '猴年春晚，我在泉州等你！', //文字内容
+    imgs: ['../img/img_big/胡歌-配图.jpg'], //状态图片url
+    post_time: '2小时前', //信息发送时间
+    liked_list: ['许茹芸', '靳东', '刘涛', '王凯KKW', '霍建华', '袁弘', '安以轩', '唐嫣', '刘诗诗', '林依晨', '刘亦菲', '杨幂'], //点赞列表
+    reply_list: [{
+      content: '我带瓶好酒过去', //回复内容
+      to: '霍建华', //回复人姓名
+    }, {
+      content: '么么哒', //回复内容
+      to: '霍建华', //被回复人姓名
+      from: '胡歌'
+    }, {
+      content: '后面那人是谁？', //回复内容
+      to: '王凯KKW' //被回复人姓名
+    }, {
+      content: '是{{nickname}}，昨晚一起喝的酒', //回复内容
+      to: '王凯KKW', //被回复人姓名
+      from: '胡歌'
+    }, {
+      content: '为什么不找我一起？', //回复内容
+      to: '胡歌', //被回复人姓名
+      from: '王凯KKW'
+    }, {
+      content: '我俩今年都参加春晚，正好彩排完了喝一杯……', //回复内容
+      to: '王凯KKW', //被回复人姓名
+      from: '胡歌'
+    }, {
+      content: '嘤嘤嘤嘤（宝宝心里苦，但是宝宝不说）', //回复内容
+      to: '胡歌', //被回复人姓名
+      from: '王凯KKW'
+    }]
+  }, {
+    avatar: '../img/avatar/彭阿姨-头像.jpg', //头像url
+    user_name: '彭阿姨', //用户名
+    content: '翻旧照片，找到和{{nickname}}小时候的合影，那年他才2岁。今年小XX第一次登上春晚舞台，希望大家多多捧场。', //文字内容
+    imgs: ['../img/img_big/彭阿姨-配图.jpg'], //状态图片url
+    post_time: '2小时前', //信息发送时间
+    liked_list: ['毕福剑', '朱军', '董卿', '周涛', '撒贝宁', '赵本山', '宋丹丹', '倪萍', '宋祖英', '赵忠祥', '王岐山', '李克强', '姨夫'], //点赞列表
+    reply_list: [{
+      content: '多谢彭阿姨为我加油，我一定不辜负您的期望，好好努力表现！', //回复内容
+      to: '{{nickname}}', //回复人姓名
+    }, {
+      content: '遇到困难和我说，别太辛苦了。', //回复内容
+      to: '{{nickname}}', //被回复人姓名
+      from: '姨夫'
+    }, {
+      content: '不辛苦！为人民服务！！！', //回复内容
+      to: '姨夫', //被回复人姓名
+      from: '{{nickname}}'
+    }]
+  }, {
+    avatar: '../img/avatar/大鹏-头像.jpg', //头像url
+    user_name: '大鹏', //用户名
+    content: '我如果整成这样得多钱？', //文字内容
+    imgs: ['../img/img_big/大鹏-配图.jpg'], //状态图片url
+    post_time: '2小时前', //信息发送时间
+    liked_list: ['小沈阳', '岳云鹏', '尼古拉斯赵四', '大宝剑乔杉', '白百合', '邓超', '吴秀波', '吉泽明步', '波多野结衣', '蓝燕'], //点赞列表
+    reply_list: [{
+      content: '同问', //回复内容
+      to: '岳云鹏', //回复人姓名
+    }, {
+      content: '同问', //回复内容
+      to: '大宝剑乔杉', //被回复人姓名
+      from: ''
+    }, {
+      content: '脸好整，主要是气质不行。', //回复内容
+      to: '大宝剑乔杉', //被回复人姓名
+      from: '奶岩'
+    }, {
+      content: '看，看，看我头像，整成我这样比较便宜。', //回复内容
+      to: '尼古拉斯赵四', //被回复人姓名
+      from: ''
+    }, {
+      content: '整容，何で？他又没你帅', //回复内容
+      to: '波多野结衣', //被回复人姓名
+      from: ''
+    }, {
+      content: '得倾家荡产吧，宝宝', //回复内容
+      to: '叫兽易小星', //被回复人姓名
+      from: ''
+    }]
   }],
   woman: [{
     avatar: '../img/avatar/黄子韬-头像.jpg', //头像url
@@ -439,7 +697,7 @@ var friendData = {
     avatar: '../img/avatar/王思聪-头像.jpg', //头像url
     user_name: '王思聪', //用户名
     content: '{{nickname}}，和我在一起，明年还让你上春晚！', //文字内容
-    imgs: ['../img/img_big/王思聪-配图.jpg'], //状态图片url
+    imgs: ['../img/img_big/王思聪-配图-g.jpg'], //状态图片url
     post_time: '2小时前', //信息发送时间
     liked_list: ['林更新', '张予曦', '袁成杰', '杨颖', '叫兽易小星', '大鹏'], //点赞列表
     reply_list: [{
@@ -529,29 +787,6 @@ var friendData = {
         content: '(#‵′)靠！', //回复内容
         from: '郑恺', //被回复人姓名
         to: '晓明'
-      }] //回复列表
-  }, {
-    avatar: '../img/avatar/孙俪-头像.jpg', //头像url
-    user_name: '俪姐', //用户名
-    content: '《芈月传2》和2016年春晚，你们更期待哪个？一个有我，一个有{{nickname}}，想好了再回答。', //文字内容
-    imgs: ['../img/img_big/孙俪-配图.jpg'], //状态图片url
-    post_time: '2小时前', //信息发送时间
-    liked_list: ['邓超', '何炅', '马苏', '刘涛', '春申君黄轩', '贾跃亭', '马化腾', '张朝阳', '马云', '{{nickname}}', '方中信'], //点赞列表
-    reply_list: [{
-        content: '娘娘，《芈月传2》给乐视独家版权吧！', //回复内容
-        to: '贾跃亭', //回复人姓名
-      }, {
-        content: '版权金要多少，尽管开口，小马哥必定拿下。', //回复内容
-        to: '马化腾' //被回复人姓名
-      }, {
-        content: '娘娘版权给优酷吧！送你一个淘宝钻石级VIP会员，全场无限额消费', //回复内容
-        to: '马云'
-      }, {
-        content: '当然是想看娘娘啦！娘娘千秋万代一统江湖！',
-        to: '何炅'
-      }, {
-        content: '最期待《芈月传2》，看我怎么玩转后宫！',
-        to: '马苏'
       }] //回复列表
   }, {
     avatar: '../img/avatar/贾乃亮-头像.jpg', //头像url
@@ -644,10 +879,10 @@ var friendData = {
         to: '李易峰'
       }, ] //回复列表
   }, {
-    avatar: '../img/avatar/彭姨-头像.jpg', //头像url
-    user_name: '彭姨', //用户名
+    avatar: '../img/avatar/彭阿姨-头像.jpg', //头像url
+    user_name: '彭阿姨', //用户名
     content: '翻旧照片，找到和{{nickname}}小时候的合影，那年他才2岁。今年小{{nickname}}第一次登上春晚舞台，希望大家多多捧场。.', //文字内容
-    imgs: ['../img/img_big/彭姨-配图.jpg'], //状态图片url
+    imgs: ['../img/img_big/彭阿姨-配图.jpg'], //状态图片url
     post_time: '2小时前', //信息发送时间
     liked_list: ['毕福剑', '朱军', '董卿', '周涛', '撒贝宁', '赵本山', '宋丹丹', '倪萍', '毛阿敏', '宋祖英', '赵忠祥', '姨夫'], //点赞列表
     reply_list: [{
@@ -765,7 +1000,36 @@ var friendData = {
 };
 
 // var listResult = shuffle(userInfo.sex == 1 ? friendData.man : friendData.woman, 5);
-var listResult = userInfo.sex == 1 ? friendData.man : friendData.woman;
+var randomList = userInfo.sex == 1 ? friendData.man : friendData.woman;
+var postTimeList = ['1分钟前', '5分钟前', '20分钟前', '半小时前', '1小时前', '3小时前']
+
+var listResult = randomList.slice(0);
+
+// TODO, 两个同时出现
+//邓超连在一起
+// randomList.forEach(function(item, index) {
+//   if (item.nickname == '邓超') {
+//     if (index == 4) {
+//       listResult.splice(3, 1);
+//       listResult[4] = speData[0];
+//     } else {
+//       listResult.splice(index + 1, 1, speData[0]);
+//     }
+//   }
+// });
+//
+// //张燕连在一起
+// randomList.forEach(function(item, index) {
+//   if (item.nickname == '张燕') {
+//     if (index == 4) {
+//       listResult.splice(3, 1);
+//       listResult[4] = speData[1];
+//     } else {
+//       listResult.splice(index + 1, 1, speData[1]);
+//     }
+//   }
+// });
+
 
 listResult.forEach((item) => {
   item.content = item.content && item.content.replace(/{{nickname}}/g, userInfo.nickname)
@@ -783,6 +1047,79 @@ listResult.forEach((item) => {
     return reply;
   })
 })
+
+//连在一起的
+
+var speData = [{
+  avatar: '../img/avatar/孙俪-头像.jpg', //头像url
+  user_name: '俪姐', //用户名
+  content: '《芈月传2》和2016年春晚，你们更期待哪个？一个有我，一个有{{nickname}}，想好了再回答。', //文字内容
+  imgs: ['../img/img_big/孙俪-配图.jpg'], //状态图片url
+  post_time: '2小时前', //信息发送时间
+  liked_list: ['邓超', '何炅', '马苏', '刘涛', '春申君黄轩', '贾跃亭', '马化腾', '张朝阳', '马云', '{{nickname}}', '方中信'], //点赞列表
+  reply_list: [{
+    content: '娘娘，《芈月传2》给乐视独家版权吧！', //回复内容
+    to: '贾跃亭', //回复人姓名
+  }, {
+    content: '版权金要多少，尽管开口，小马哥必定拿下。', //回复内容
+    to: '马化腾' //被回复人姓名
+  }, {
+    content: '娘娘版权给优酷吧！送你一个淘宝钻石级VIP会员，全场无限额消费', //回复内容
+    to: '马云'
+  }, {
+    content: '当然是想看娘娘啦！娘娘千秋万代一统江湖！',
+    to: '何炅'
+  }, {
+    content: '最期待《芈月传2》，看我怎么玩转后宫！',
+    to: '马苏'
+  }, {
+    content: '期待和妹妹一起出演芈月2~',
+    to: '刘涛'
+  }, {
+    content: '其实我还挺想在春晚上看到XX的……',
+    to: '邓超'
+  }, {
+    content: '回家等着你',
+    to: '俪姐'
+  }, {
+    content: '娘娘，我错了！！！',
+    to: '俪姐',
+    from: '邓超'
+  }]
+}, {
+  avatar: '../img/avatar/范爷-头像.jpg', //头像url
+  user_name: '范爷', //用户名
+  content: '感谢康熙的邀请，有幸录制最后一期，虽然康熙结束了，但是【我们】会一直走下去的', //文字内容
+  imgs: ['../img/img_big/范爷-配图.jpg'], //状态图片url
+  post_time: '2小时前', //信息发送时间
+  liked_list: ['李晨', '康永哥', '小S', '邓超', '林心如', '周杰', '苏有朋', '{{nickname}}'], //点赞列表
+  reply_list: [{
+      content: '天涯海角，有我相伴！', //回复内容
+      to: '李晨', //回复人姓名
+    }, {
+      content: '呵呵', //回复内容
+      to: '赵薇' //被回复人姓名
+    }, {
+      content: '天啊！我的腿好白哦', //回复内容
+      to: '小S'
+    }, {
+      content: '但是好像有点短哦',
+      to: '小S',
+      from: '范爷'
+    }, {
+      content: '拜托！你腿那么粗，有什么资格说我',
+      to: '范爷',
+      from: '小S'
+    }, {
+      content: '你的腿又白又细又长，就是少女的腿啊~~',
+      to: '小S',
+      from: '康永哥'
+    }, {
+      content: '哈哈哈，您大人大量，不要和熙娣计较啦……',
+      to: '范爷',
+      from: '康永哥'
+    }]
+}];
 
 var adData = {
   avatar: '../img/avatar/夺宝联萌-头像.jpg', //头像url
@@ -818,9 +1155,14 @@ var adData = {
 
 //插入广告
 listResult.splice(2, 0, adData)
+
+//时间顺序
+listResult.forEach(function(item, index) {
+  item.post_time = postTimeList[index] || postTimeList[Math.abs(index - postTimeList.length)]
+});
 // 随机背景图
 function randomBg() {
-  var randomBg = Math.ceil(Math.random()*14);
+  var randomBg = Math.ceil(Math.random() * 14);
   console.log(randomBg)
   $('._show').style.backgroundImage = 'url(../img/img_big/' + (randomBg || 1) + '.jpeg)';
 }
@@ -904,9 +1246,9 @@ var friendCircle = new Vue({
     getConfig();
     $('title').innerText = '听说' + userInfo.nickname + '要上春晚，朋友圈竟然变这样!';
     //图片放大
-    $('#list').addEventListener('click', function(e){
+    $('#list').addEventListener('click', function(e) {
       var target = e.target;
-      if(target.className == 'list-img ad-img') {
+      if (target.className == 'list-img ad-img') {
         $('.modal').className = 'modal';
 
         $('.modal-container').innerHTML = '<img src=' + target.src + '>';
@@ -922,7 +1264,7 @@ var friendCircle = new Vue({
     //随机背景
     randomBg();
     //点击分享
-    $('#share_to_friend').addEventListener('click', function(e){
+    $('#share_to_friend').addEventListener('click', function(e) {
       $('.modal').className = 'modal';
       $('.modal').innerHTML = '<img class="arrow" src="../img/jiantou.png" alt=""><div class="modal-container"><img class="share_bz" src="../img/baozou.png" alt=""></div>'
     });
