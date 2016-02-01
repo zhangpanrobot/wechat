@@ -58,7 +58,7 @@ var code = paramParse('code') //用户信息凭证
   //   alert('授权失败, 请从朋友圈重新进入本页面')
   // }
 
-var userInfo = localStorage.getItem('userInfo') && localStorage.getItem('userInfo') == 'undefined' && JSON.parse(localStorage.getItem('userInfo')) || {};
+var userInfo = localStorage.getItem('userInfo') && localStorage.getItem('userInfo') !== 'undefined' && JSON.parse(localStorage.getItem('userInfo')) || {};
 
 function friendLink() {
   return './index.html?userInfo=' + encodeURIComponent(JSON.stringify(userInfo));
