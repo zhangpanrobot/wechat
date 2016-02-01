@@ -93,8 +93,8 @@ function getUserInfo() {
     sendRequest('/getUserInfo.do?code=' + code, 'GET', '', function(data) {
       if (!data.fail) {
         data = JSON.parse(data)
-        if (data.errcode) {
-            alert(errcode)
+        if (data.data && data.data.errcode) {
+            toAuth();
         }
         userInfo = data.data;
         // localStorage.setItem('userInfo', JSON.stringify(userInfo));
@@ -103,7 +103,7 @@ function getUserInfo() {
         //立即查看
         $('#share_link').href = friendLink()
       } else {
-        toAuth()
+        toAuth();
         // location.href = friendLink();
       }
     })
