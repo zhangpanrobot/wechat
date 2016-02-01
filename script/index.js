@@ -3,7 +3,7 @@ var nickname = userInfo && userInfo.nickname
 if (!userInfo || userInfo == 'undefined' || !nickname) {
   userInfo = {
     "openid": "ofFh1t72qWRyN8V86w8qagrnBt68",
-    "nickname": "",
+    "nickname": "MH",
     "sex": 1,
     "language": "en",
     "city": "海淀",
@@ -14,6 +14,8 @@ if (!userInfo || userInfo == 'undefined' || !nickname) {
   }
 }
 
+
+console.log(userInfo)
 function $(selector) {
   return document.querySelector(selector)
 }
@@ -766,7 +768,8 @@ var friendData = {
   ]
 };
 
-var listResult = shuffle(userInfo.sex == 1 ? friendData.man : friendData.woman, 4);
+// var listResult = shuffle(userInfo.sex == 1 ? friendData.man : friendData.woman, 5);
+var listResult = userInfo.sex == 1 ? friendData.man : friendData.woman;
 
 listResult.forEach((item) => {
   item.content = item.content && item.content.replace(/{{nickname}}/g, userInfo.nickname)
@@ -776,10 +779,12 @@ listResult.forEach((item) => {
     }
     return liked;
   })
-  item.reply_list.forEach((reply) => {
+  item.reply_list = item.reply_list.map((reply) => {
     reply.content = reply.content && reply.content.replace(/{{nickname}}/g, userInfo.nickname)
     reply.from = reply.from && reply.from.replace(/{{nickname}}/, userInfo.nickname)
+    console.log(userInfo.nickname)
     reply.to = reply.to && reply.to.replace(/{{nickname}}/, userInfo.nickname)
+    return reply;
   })
 })
 
@@ -815,6 +820,12 @@ var adData = {
 
 //插入广告
 listResult.splice(2, 0, adData)
+// 随机背景图
+function randomBg() {
+  var randomBg = Math.ceil(Math.random()*14);
+  console.log(randomBg)
+  $('._show').style.backgroundImage = 'url(../img/img_big/' + (randomBg || 1) + '.jpeg)';
+}
 
 // 数组里随机选取n个
 function shuffle(array, num) {
@@ -896,14 +907,17 @@ var friendCircle = new Vue({
     $('title').innerText = '听说' + userInfo.nickname + '要上春晚，朋友圈竟然变这样!';
     $('#list').addEventListener('click', function(e){
       var target = e.target;
-      if(target.className = 'list-img') {
+      if(target.className == 'list-img') {
         $('.modal').className = 'modal';
         $('.modal-container').innerHTML = '<img src=' + target.src + '>';
       }
     });
     $('.modal').addEventListener('click', function(e) {
       this.className = 'modal hide';
+      $('.modal-container').innerHTML = '';
     })
+    //随机背景
+    randomBg();
     //跳转至用户授权页
     $('#share a').addEventListener('click', function(e) {
       e.preventDefault();

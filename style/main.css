@@ -3168,13 +3168,13 @@ header{
     width: 77px
 }
 }*/
-@media screen and (min-width:413px) and (max-width:414px) {
+/*@media screen and (min-width:413px) and (max-width:414px) {
     .list-img{
     height: 90px;
     padding-right: 10px;
     float: left;
     width: 90px
-}
+}*/
 }
 .time{
     clear: both;
@@ -3255,11 +3255,14 @@ b{
     opacity: 0.9;
 }
 
-._show{
+._show.header_bg{
   margin-bottom: 30px;
+  height: 240px;
+  background: url('../img/img_big/1.jpeg') center center no-repeat;
+  -webkit-background-size: cover;
+  background-size: cover;
 }
 
-//弹窗
 .modal {
   position: fixed;
   width: 100%;
