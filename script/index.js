@@ -1062,7 +1062,7 @@ var speData = [{
     }]
 }];
 var randomList = [];
-var trendsList = decodeURIComponent(paramPair('trends'));
+var trendsList = decodeURIComponent(paramParse('trends'));
 if(trendsList && trendsList !== 'undefined') {
   trendsList = trendsList.split(',');
   if(userInfo.sex == 1) {
