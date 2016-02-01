@@ -31,7 +31,7 @@
   </div>
   <div class="container" id="result">
     <div class="result">
-      <img src="../img/light.png" alt="">
+      <!-- <img src="../img/light.png" alt=""> -->
       <div class="result_content">
         <div class="deng"><img src="../img/deng.png" alt="">
           <div class="content">
@@ -114,6 +114,7 @@
       setTimeout(function() {
         $('#present').className = 'container'
         $("#result").className = "container show";
+        body.backgroundImage = '../img/bg1.jpg';
         $(".loading").className = "loading";
       }, 1000);
       var resultObj = shuffle(resultData, 1)[0];
