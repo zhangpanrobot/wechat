@@ -1286,7 +1286,7 @@ var friendCircle = new Vue({
       var state = Math.random().toString(36).substr(2);
       var redirect_uri = encodeURIComponent('http://weixin.ezone.cn/view/shake.html');
       if(localUserInfo && localUserInfo.nickname) {
-        location.href = '../shake.html';
+        location.href = './shake.html';
       } else {
         location.href = generateRedirectUrl('wx693582460d15cb5e', redirect_uri, 'snsapi_userinfo', state);
       }
