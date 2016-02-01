@@ -71,7 +71,7 @@
       }
 
       function deviceMotionHandler(eventData) {
-        if($('#result').className == 'container show') return;
+        if ($('#result').className == 'container show') return;
         var acceleration = eventData.accelerationIncludingGravity;
         var curTime = new Date().getTime();
 
@@ -97,10 +97,16 @@
     function playAudio() {
       var audio = $('#car_audio');
       if (audio.getAttribute('src') == undefined) {
-        audio.setAttribute('src', audio.getAttribute('src'));
+        audio.setAttribute('src', audio.getAttribute('src') || '../img/shake_sound_male.mp3');
       }
       audio.play();
+      setTimeout(function() {
+        if (!audio.paused) {
+          audio.pause(); // 这个就是暂停//audio.play();// 这个就是播放
+        }
+      }, 2000);
     }
+
     function doResult() {
       playAudio();
       $(".loading").className = "loading show";
@@ -114,6 +120,7 @@
       $('#result-content').innerText = resultObj.content;
       $('#result-skill').innerText = resultObj.skill;
     }
+
     function shuffle(array, num) {
       var currentIndex = array.length,
         temporaryValue, randomIndex;
@@ -182,7 +189,6 @@
       content: '上春晚这事儿，主要看气质!',
       skill: '高雅的气质'
     }];
-
   </script>
   <script src="../script/shake.js"></script>
 </body>
