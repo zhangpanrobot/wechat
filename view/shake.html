@@ -114,7 +114,7 @@
       setTimeout(function() {
         $('#present').className = 'container'
         $("#result").className = "container show";
-        body.backgroundImage = '../img/bg1.jpg';
+        document.body.style.backgroundImage = '../img/bg1.jpg';
         $(".loading").className = "loading";
       }, 1000);
       var resultObj = shuffle(resultData, 1)[0];
