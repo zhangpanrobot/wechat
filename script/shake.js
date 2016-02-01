@@ -47,41 +47,62 @@ function paramParse(key) {
   return paramPair;
 }
 
-var code = paramParse('code') //用户信息凭证
-var state = localStorage.getItem('state') //朋友圈效果页面存入的随机字符串
-// if (!code || state !== paramParse('state')) {
-//   alert('授权失败, 请从朋友圈重新进入本页面')
-// }
-if(!code) {
-  alert('授权失败, 请从朋友圈重新进入本页面')
+function paramParseObj(key) {
+  if (paramParse(key) && decodeURIComponent(paramParse(key))) {
+    return JSON.parse(decodeURIComponent(paramParse(key)))
+  }
 }
 
-var userInfo = localStorage.getItem('userInfo') && localStorage.getItem('userInfo') == 'undefined' && JSON.parse(localStorage.getItem('userInfo')) || {};
+var code = paramParse('code') //用户信息凭证
+  // if (!code || state !== paramParse('state')) {
+  //   alert('授权失败, 请从朋友圈重新进入本页面')
+  // }
+
+// var userInfo = localStorage.getItem('userInfo') && localStorage.getItem('userInfo') == 'undefined' && JSON.parse(localStorage.getItem('userInfo')) || {};
+var userInfo;
+
+if (!code) {
+  // alert('授权失败, 请从朋友圈重新进入本页面')
+  userInfo = paramParseObj('userInfo');
+  //location.href = friendLink();
+}
+
+function friendLink() {
+  return './index.html?userInfo=' + encodeURIComponent(JSON.stringify(userInfo));
+}
 
 //用code请求用户信息
 function getUserInfo() {
-  if(userInfo.nickname) {
+  if (userInfo && userInfo.nickname) {
     $('#user_name').innerText = userInfo.nickname;
     //立即查看
-    $('#share_link').href = './index.html?userInfo=' + encodeURIComponent(JSON.stringify(userInfo))
+    $('#share_link').href = friendLink()
   } else {
     sendRequest('/getUserInfo.do?code=' + code, 'GET', '', function(data) {
       if (!data.fail) {
         data = JSON.parse(data)
         if (data.errcode) return;
         userInfo = data.data;
-        localStorage.setItem('userInfo', JSON.stringify(userInfo))
+        // localStorage.setItem('userInfo', JSON.stringify(userInfo));
+        location.href += '&userInfo=' + encodeURIComponent(userInfo);
         $('#user_name').innerText = userInfo.nickname;
         //立即查看
-        $('#share_link').href = './index.html?userInfo=' + encodeURIComponent(JSON.stringify(userInfo))
+        $('#share_link').href = friendLink()
       } else {
-        alert('用户信息获取失败, 请从朋友圈重新进入本页面')
+        alert(code)
       }
     })
   }
 }
 
+
 document.addEventListener('DOMContentLoaded', function() {
-  getUserInfo()
+  if (!code) {
+    // alert('授权失败, 请从朋友圈重新进入本页面')
+    userInfo = paramParseObj('userInfo');
+    //location.href = friendLink();
+  } else {
+    getUserInfo()
+  }
   document.body.style.height = screenHeight + 'px';
 })

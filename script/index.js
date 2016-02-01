@@ -3,7 +3,7 @@ var nickname = userInfo && userInfo.nickname
 if (!userInfo || userInfo == 'undefined' || !nickname) {
   userInfo = {
     "openid": "ofFh1t72qWRyN8V86w8qagrnBt68",
-    "nickname": "MH",
+    "nickname": "夺宝联萌",
     "sex": 1,
     "language": "en",
     "city": "海淀",
@@ -13,9 +13,6 @@ if (!userInfo || userInfo == 'undefined' || !nickname) {
     "privilege": []
   }
 }
-
-
-console.log(userInfo)
 
 function $(selector) {
   return document.querySelector(selector)
@@ -63,7 +60,7 @@ function paramParse(key) {
 }
 
 function paramParseObj(key) {
-  if (paramParse(key) && decodeURIComponent(paramParse(key))) {
+  if (paramParse(key) && paramParse(key) !== 'undefined' && decodeURIComponent(paramParse(key))) {
     return JSON.parse(decodeURIComponent(paramParse(key)))
   }
 }
@@ -127,7 +124,7 @@ var friendData = {
         from: '晓明', //被回复人姓名
         to: '杨颖'
       }, {
-        content: '害羞', //回复内容
+        content: ',', //回复内容
         from: '杨颖', //被回复人姓名
         to: '晓明'
       }, {
@@ -198,7 +195,7 @@ var friendData = {
         from: '晓明',
         to: '黄渤'
       }, {
-        content: '谢谢嫂子！直播结束就去你家，我带上丽颖一块儿（害羞表情）饭还是让丽颖做',
+        content: '谢谢嫂子！直播结束就去你家，我带上丽颖一块儿，饭还是让丽颖做',
         from: '',
         to: '{{nickname}}'
       }] //回复列表
@@ -262,10 +259,10 @@ var friendData = {
         from: '林更新'
       }] //回复列表
   }, {
-    avatar: '../img/avatar/张燕-头像.jpg', //头像url
-    user_name: '张燕', //用户名
+    avatar: '../img/avatar/张馨予-头像.jpg', //头像url
+    user_name: '张馨予', //用户名
     content: '二手货有什么好的', //文字内容
-    imgs: ['../img/img_big/张燕-配图.jpg'], //状态图片url
+    imgs: ['../img/img_big/张馨予-配图.jpg'], //状态图片url
     post_time: '2小时前', //信息发送时间
     liked_list: ['张予曦', '张艺馨', '张歆艺', '姚笛', '王大治', '叶梓萱'], //点赞列表
     reply_list: [{
@@ -280,7 +277,7 @@ var friendData = {
     }, {
       content: '谢谢哥',
       to: '王大治',
-      from: '张燕'
+      from: '张馨予'
     }]
   }, {
     avatar: '../img/avatar/王思聪-头像.jpg', //头像url
@@ -322,7 +319,7 @@ var friendData = {
     }]
   }, {
     avatar: '../img/avatar/张天爱-头像.jpg', //头像url
-    user_name: '芃芃哥', //用户名
+    user_name: '太子妃张天爱', //用户名
     content: '宝贝儿，你就是那春茶，我就是那刚烧开的水，我想泡你啊！', //文字内容
     imgs: ['../img/img_big/张天爱-配图.jpg'], //状态图片url
     post_time: '2小时前', //信息发送时间
@@ -351,11 +348,11 @@ var friendData = {
     }, {
       content: '上春晚了不起哈？等着哥去壁咚你！', //回复内容
       to: '{{nickname}}', //被回复人姓名
-      from: '芃芃哥'
+      from: '太子妃张天爱'
     }, {
-      content: '害羞', //回复内容
+      content: '你追我啊, 如果追到我, 我就和你嘿嘿嘿...', //回复内容
       from: '{{nickname}}', //被回复人姓名
-      to: '芃芃哥'
+      to: '太子妃张天爱'
     }]
   }, {
     avatar: '../img/avatar/陈赫-头像.jpg', //头像url
@@ -394,13 +391,6 @@ var friendData = {
     post_time: '2小时前', //信息发送时间
     liked_list: ['韩红', '冯小刚', '李小璐', '孟非', '贾乃亮', '王自健', '郭德纲'], //点赞列表
     reply_list: [{
-      content: '今年我也上春晚……', //回复内容
-      to: '于谦', //回复人姓名
-    }, {
-      content: '她说的就是你！', //回复内容
-      to: '于谦', //被回复人姓名
-      from: '郭德纲'
-    }, {
       content: '还有三年就到猪年了，答应我，你们的热情不要过去好吗', //回复内容
       to: '马德华', //被回复人姓名
     }, {
@@ -494,7 +484,7 @@ var friendData = {
   }, {
     avatar: '../img/avatar/彭阿姨-头像.jpg', //头像url
     user_name: '彭阿姨', //用户名
-    content: '翻旧照片，找到和{{nickname}}小时候的合影，那年他才2岁。今年小XX第一次登上春晚舞台，希望大家多多捧场。', //文字内容
+    content: '翻旧照片，找到和{{nickname}}小时候的合影，那年他才2岁。今年小{{nickname}}第一次登上春晚舞台，希望大家多多捧场。', //文字内容
     imgs: ['../img/img_big/彭阿姨-配图.jpg'], //状态图片url
     post_time: '2小时前', //信息发送时间
     liked_list: ['毕福剑', '朱军', '董卿', '周涛', '撒贝宁', '赵本山', '宋丹丹', '倪萍', '宋祖英', '赵忠祥', '王岐山', '李克强', '姨夫'], //点赞列表
@@ -712,13 +702,13 @@ var friendData = {
         content: '老公，我只想和你在一起，不上春晚也无所谓啊', //回复内容
         to: '张予曦' //被回复人姓名
       }, {
-        content: '(挖鼻)', //回复内容
+        content: '切', //回复内容
         to: '{{nickname}}' //被回复人姓名
       }] //回复列表
   }, {
     avatar: '../img/avatar/张天爱-头像.jpg', //头像url
     user_name: '张天爱', //用户名
-    content: '27亿播放量，太子妃重新上架，感谢全国的老婆们~（飞吻表情）', //文字内容
+    content: '27亿播放量，太子妃重新上架，感谢全国的老婆们~么么哒', //文字内容
     imgs: ['../img/img_big/张天爱-配图.jpg'], //状态图片url
     post_time: '2小时前', //信息发送时间
     liked_list: ['贾跃亭', '甘薇', '{{nickname}}', '侣皓吉吉', '盛一伦', '于朦胧', '郭俊辰', '江奇霖', '海铃'], //点赞列表
@@ -727,17 +717,17 @@ var friendData = {
         from: '', //回复人姓名
         to: '侣皓吉吉' //被回复人姓名
       }, {
-        content: '女神姐姐撩妹的镜头都木有啦，我和九哥跳舞的片段也木有啦（哭的表情）!', //回复内容
+        content: '女神姐姐撩妹的镜头都木有啦，我和九哥跳舞的片段也木有啦! 呜呜呜', //回复内容
         to: '郭俊辰', //被回复人姓名
         from: ''
       }, {
         content: '这画面太美，我没脸看……', //回复内容
         to: '盛一伦' //被回复人姓名
       }, {
-        content: '芃芃哥男友力MAX！', //回复内容
+        content: '太子妃张天爱男友力MAX！', //回复内容
         to: '{{nickname}}' //被回复人姓名
       }, {
-        content: '娘娘~我们共舞的镜头都删了（大哭表情）', //回复内容
+        content: '娘娘~我们共舞的镜头都删了，嘤嘤嘤', //回复内容
         to: '海铃' //被回复人姓名
       }] //回复列表
   }, {
@@ -768,7 +758,7 @@ var friendData = {
         from: '晓明', //被回复人姓名
         to: '杨颖'
       }, {
-        content: '害羞', //回复内容
+        content: ',', //回复内容
         from: '杨颖', //被回复人姓名
         to: '晓明'
       }, {
@@ -853,13 +843,13 @@ var friendData = {
         content: '我将参加中央电视台春节戏曲晚会，暂定大年初三播出，欢迎大家收看。',
         to: '六小龄童',
       }, {
-        content: '(哭脸)',
+        content: '嘤嘤嘤',
         to: '{{nickname}}',
       }] //回复列表
   }, {
     avatar: '../img/avatar/李易峰-头像.jpg', //头像url
     user_name: '李易峰', //用户名
-    content: '把乐带回家.', //文字内容
+    content: '把乐带回家。', //文字内容
     imgs: ['../img/img_big/李易峰-配图.jpg'], //状态图片url
     post_time: '2小时前', //信息发送时间
     liked_list: ['蔡依林', '罗志祥', '六小龄童', '杨幂', '南派三叔'], //点赞列表
@@ -881,7 +871,7 @@ var friendData = {
   }, {
     avatar: '../img/avatar/彭阿姨-头像.jpg', //头像url
     user_name: '彭阿姨', //用户名
-    content: '翻旧照片，找到和{{nickname}}小时候的合影，那年他才2岁。今年小{{nickname}}第一次登上春晚舞台，希望大家多多捧场。.', //文字内容
+    content: '翻旧照片，找到和{{nickname}}小时候的合影，那年他才2岁。今年小{{nickname}}第一次登上春晚舞台，希望大家多多捧场。', //文字内容
     imgs: ['../img/img_big/彭阿姨-配图.jpg'], //状态图片url
     post_time: '2小时前', //信息发送时间
     liked_list: ['毕福剑', '朱军', '董卿', '周涛', '撒贝宁', '赵本山', '宋丹丹', '倪萍', '毛阿敏', '宋祖英', '赵忠祥', '姨夫'], //点赞列表
@@ -893,7 +883,7 @@ var friendData = {
         to: '{{nickname}}', //被回复人姓名
         from: '姨夫'
       }, {
-        content: '(开心表情）恩~姨夫么么哒', //回复内容
+        content: '恩~姨夫么么哒', //回复内容
         to: '姨夫',
         from: '{{nickname}}'
       }] //回复列表
@@ -999,55 +989,6 @@ var friendData = {
   ]
 };
 
-// var listResult = shuffle(userInfo.sex == 1 ? friendData.man : friendData.woman, 5);
-var randomList = userInfo.sex == 1 ? friendData.man : friendData.woman;
-var postTimeList = ['1分钟前', '5分钟前', '20分钟前', '半小时前', '1小时前', '3小时前']
-
-var listResult = randomList.slice(0);
-
-// TODO, 两个同时出现
-//邓超连在一起
-// randomList.forEach(function(item, index) {
-//   if (item.nickname == '邓超') {
-//     if (index == 4) {
-//       listResult.splice(3, 1);
-//       listResult[4] = speData[0];
-//     } else {
-//       listResult.splice(index + 1, 1, speData[0]);
-//     }
-//   }
-// });
-//
-// //张燕连在一起
-// randomList.forEach(function(item, index) {
-//   if (item.nickname == '张燕') {
-//     if (index == 4) {
-//       listResult.splice(3, 1);
-//       listResult[4] = speData[1];
-//     } else {
-//       listResult.splice(index + 1, 1, speData[1]);
-//     }
-//   }
-// });
-
-
-listResult.forEach((item) => {
-  item.content = item.content && item.content.replace(/{{nickname}}/g, userInfo.nickname)
-  item.liked_list = item.liked_list.map((liked) => {
-    if (liked == '{{nickname}}') {
-      liked = liked.replace(/{{nickname}}/, userInfo.nickname);
-    }
-    return liked;
-  })
-  item.reply_list = item.reply_list.map((reply) => {
-    reply.content = reply.content && reply.content.replace(/{{nickname}}/g, userInfo.nickname)
-    reply.from = reply.from && reply.from.replace(/{{nickname}}/, userInfo.nickname)
-    console.log(userInfo.nickname)
-    reply.to = reply.to && reply.to.replace(/{{nickname}}/, userInfo.nickname)
-    return reply;
-  })
-})
-
 //连在一起的
 
 var speData = [{
@@ -1076,7 +1017,7 @@ var speData = [{
     content: '期待和妹妹一起出演芈月2~',
     to: '刘涛'
   }, {
-    content: '其实我还挺想在春晚上看到XX的……',
+    content: '其实我还挺想在春晚上看到{{nickname}}的……',
     to: '邓超'
   }, {
     content: '回家等着你',
@@ -1120,6 +1061,57 @@ var speData = [{
       from: '康永哥'
     }]
 }];
+
+
+var randomList = shuffle(userInfo.sex == 1 ? friendData.man : friendData.woman, 5);
+// var randomList = userInfo.sex == 1 ? friendData.man : friendData.woman;
+var postTimeList = ['1分钟前', '5分钟前', '20分钟前', '半小时前', '1小时前', '3小时前']
+
+var listResult = randomList.slice(0);
+
+// TODO, 两个同时出现
+//邓超连在一起
+randomList.forEach(function(item, index) {
+  if (item.user_name == '邓超') {
+    if (index == 4) {
+      listResult.splice(3, 1);
+      listResult[4] = speData[0];
+    } else {
+      listResult.splice(index + 1, 1, speData[0]);
+    }
+  }
+});
+
+//张馨予连在一起
+randomList.forEach(function(item, index) {
+  if (item.user_name == '张馨予') {
+    if (index == 4) {
+      listResult.splice(3, 1);
+      listResult[4] = speData[1];
+    } else {
+      listResult.splice(index + 1, 1, speData[1]);
+    }
+  }
+});
+
+listResult.forEach((item) => {
+  item.content = item.content && item.content.replace(/{{nickname}}/g, userInfo.nickname)
+  item.liked_list = item.liked_list.map((liked) => {
+    if (liked == '{{nickname}}') {
+      liked = liked.replace(/{{nickname}}/, userInfo.nickname);
+    }
+    return liked;
+  })
+  item.reply_list = item.reply_list.map((reply) => {
+    reply.content = reply.content && reply.content.replace(/{{nickname}}/g, userInfo.nickname)
+    reply.from = reply.from && reply.from.replace(/{{nickname}}/, userInfo.nickname)
+    console.log(userInfo.nickname)
+    reply.to = reply.to && reply.to.replace(/{{nickname}}/, userInfo.nickname)
+    return reply;
+  })
+})
+
+
 
 var adData = {
   avatar: '../img/avatar/夺宝联萌-头像.jpg', //头像url
@@ -1274,7 +1266,6 @@ var friendCircle = new Vue({
       //拿到appid, 生成随机state, scope为'snsapi_userinfo'
       var state = Math.random().toString(36).substr(2);
       var redirect_uri = encodeURIComponent('http://weixin.ezone.cn/view/shake.html');
-      localStorage.setItem('state', state);
       setTimeout(function() {
         location.href = generateRedirectUrl('wx693582460d15cb5e', redirect_uri, 'snsapi_userinfo', state);
       }, 50);

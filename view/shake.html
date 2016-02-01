@@ -15,6 +15,7 @@
 </head>
 
 <body class="shake">
+  <audio preload="preload" id="car_audio" src="../img/shake_sound_male.mp3" loop=""></audio>
   <div class="container show" id="present">
     <div class="banner">
       <img class="chunwan" src="../img/chunwan.png" alt="我要上春晚">
@@ -92,7 +93,16 @@
         }
       }
     })
+
+    function playAudio() {
+      var audio = $('#car_audio');
+      if (audio.getAttribute('src') == undefined) {
+        audio.setAttribute('src', audio.getAttribute('src'));
+      }
+      audio.play();
+    }
     function doResult() {
+      playAudio();
       $(".loading").className = "loading show";
       setTimeout(function() {
         $('#present').className = 'container'
