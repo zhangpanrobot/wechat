@@ -84,12 +84,12 @@ function getUserInfo() {
         if (data.errcode) return;
         userInfo = data.data;
         // localStorage.setItem('userInfo', JSON.stringify(userInfo));
-        location.href += '&userInfo=' + encodeURIComponent(userInfo);
+        location.href += '&userInfo=' + encodeURIComponent(JSON.stringify(userInfo));
         $('#user_name').innerText = userInfo.nickname;
         //立即查看
         $('#share_link').href = friendLink()
       } else {
-        alert(code)
+        // location.href = friendLink();
       }
     })
   }
