@@ -58,14 +58,7 @@ var code = paramParse('code') //用户信息凭证
   //   alert('授权失败, 请从朋友圈重新进入本页面')
   // }
 
-// var userInfo = localStorage.getItem('userInfo') && localStorage.getItem('userInfo') == 'undefined' && JSON.parse(localStorage.getItem('userInfo')) || {};
-var userInfo;
-
-if (!code) {
-  // alert('授权失败, 请从朋友圈重新进入本页面')
-  userInfo = paramParseObj('userInfo');
-  //location.href = friendLink();
-}
+var userInfo = localStorage.getItem('userInfo') && localStorage.getItem('userInfo') == 'undefined' && JSON.parse(localStorage.getItem('userInfo')) || {};
 
 function friendLink() {
   return './index.html?userInfo=' + encodeURIComponent(JSON.stringify(userInfo));
@@ -94,11 +87,10 @@ function getUserInfo() {
       if (!data.fail) {
         data = JSON.parse(data)
         if (data.data && data.data.errcode) {
-            toAuth();
+            return toAuth();
         }
         userInfo = data.data;
-        // localStorage.setItem('userInfo', JSON.stringify(userInfo));
-        // location.href += '&userInfo=' + encodeURIComponent(JSON.stringify(userInfo));
+        localStorage.setItem('userInfo', JSON.stringify(userInfo));
         $('#user_name').innerText = userInfo.nickname;
         //立即查看
         $('#share_link').href = friendLink()
@@ -114,13 +106,7 @@ function getUserInfo() {
 
 
 document.addEventListener('DOMContentLoaded', function() {
-  if (!code) {
-    // alert('授权失败, 请从朋友圈重新进入本页面')
-    userInfo = paramParseObj('userInfo');
-    // location.href = friendLink();
-  } else {
-    getUserInfo()
-  }
+  getUserInfo();
   document.body.style.height = screenHeight + 'px';
 
 })
