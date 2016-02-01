@@ -108,6 +108,9 @@ body {
   display: block;
   margin: 0 auto;
 }
+#share_link img{
+  margin-bottom: 0;
+}
 .result_content {
   position: absolute;
   top: 15%;

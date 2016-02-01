@@ -122,4 +122,5 @@ document.addEventListener('DOMContentLoaded', function() {
     getUserInfo()
   }
   document.body.style.height = screenHeight + 'px';
+  
 })
