@@ -259,10 +259,10 @@ var friendData = {
         from: '林更新'
       }] //回复列表
   }, {
-    avatar: '../img/avatar/张馨予-头像.jpg', //头像url
+    avatar: '../img/avatar/张燕-头像.jpg', //头像url
     user_name: '张馨予', //用户名
     content: '二手货有什么好的', //文字内容
-    imgs: ['../img/img_big/张馨予-配图.jpg'], //状态图片url
+    imgs: ['../img/img_big/张燕-配图.jpg'], //状态图片url
     post_time: '2小时前', //信息发送时间
     liked_list: ['张予曦', '张艺馨', '张歆艺', '姚笛', '王大治', '叶梓萱'], //点赞列表
     reply_list: [{
@@ -1028,10 +1028,10 @@ var speData = [{
     from: '邓超'
   }]
 }, {
-  avatar: '../img/avatar/范爷-头像.jpg', //头像url
+  avatar: '../img/avatar/范冰冰-头像.jpg', //头像url
   user_name: '范爷', //用户名
   content: '感谢康熙的邀请，有幸录制最后一期，虽然康熙结束了，但是【我们】会一直走下去的', //文字内容
-  imgs: ['../img/img_big/范爷-配图.jpg'], //状态图片url
+  imgs: ['../img/img_big/范冰冰-配图.jpg'], //状态图片url
   post_time: '2小时前', //信息发送时间
   liked_list: ['李晨', '康永哥', '小S', '邓超', '林心如', '周杰', '苏有朋', '{{nickname}}'], //点赞列表
   reply_list: [{
