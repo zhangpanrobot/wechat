@@ -286,7 +286,7 @@ var friendData = {
     avatar: '../img/avatar/黄子韬-头像.jpg', //头像url
     user_name: 'HZT黄子韬', //用户名
     content: '非常期待{{nickname}}姐在春晚的演出，我也要向{{nickname}}姐学习，坚持！努力！早晚有一天，我也会登上春晚的舞台！', //文字内容
-    imgs: ['../img/img_big/黄子韬-头像.jpg'], //状态图片url
+    imgs: ['../img/img_big/黄子韬-配图.jpg'], //状态图片url
     post_time: '2小时前', //信息发送时间
     liked_list: ['{{nickname}}', '宋茜', '周觅', 'Kai', '金俊勉', '高云翔', '陈一冰', '潘玮柏'], //点赞列表
     reply_list: [{
@@ -339,7 +339,7 @@ var friendData = {
     avatar: '../img/avatar/王俊凯-头像.jpg', //头像url
     user_name: '王俊凯', //用户名
     content: '今天和{{nickname}}姐姐一起参加春晚彩排，有点小兴奋。', //文字内容
-    imgs: ['../img/img_big/王俊凯-头像.jpg'], //状态图片url
+    imgs: ['../img/img_big/王俊凯-配图.jpg'], //状态图片url
     post_time: '2小时前', //信息发送时间
     liked_list: ['易烊千玺', '王源', '黄晓明', '谢娜', '何炅', '杨颖'], //点赞列表
     reply_list: [{
@@ -363,7 +363,7 @@ var friendData = {
     avatar: '../img/avatar/陈学冬-头像.jpg', //头像url
     user_name: '陈学冬', //用户名
     content: '谢谢{{nickname}}送我的雪地靴，春晚fighting！', //文字内容
-    imgs: ['../img/img_big/陈学冬-头像.jpg'], //状态图片url
+    imgs: ['../img/img_big/陈学冬-配图.jpg'], //状态图片url
     post_time: '2小时前', //信息发送时间
     liked_list: ['郭敬明', '安东尼', '落落', '华晨宇', '笛安', '杨幂', '谢依霖', '郭碧婷'], //点赞列表
     reply_list: [{
@@ -382,10 +382,10 @@ var friendData = {
         to: '张艺兴' //被回复人姓名
       }] //回复列表
   }, {
-    avatar: '../img/avatar/亦凡宝贝-头像.jpg', //头像url
+    avatar: '../img/avatar/吴亦凡-头像.jpg', //头像url
     user_name: '亦凡宝贝', //用户名
     content: '我喜欢女儿，希望以后能有一个像{{nickname}}的女儿~', //文字内容
-    imgs: ['../img/img_big/亦凡宝贝-头像.jpg'], //状态图片url
+    imgs: ['../img/img_big/吴亦凡-配图.jpg'], //状态图片url
     post_time: '2小时前', //信息发送时间
     liked_list: ['姚晨', '韩寒', '冯小刚', '杨幂', '张涵予', '许晴'], //点赞列表
     reply_list: [{
@@ -411,7 +411,7 @@ var friendData = {
     avatar: '../img/avatar/杨洋-头像.jpg', //头像url
     user_name: '杨洋', //用户名
     content: '做个新发型，去见{{nickname}}', //文字内容
-    imgs: ['../img/img_big/杨洋-头像.jpg'], //状态图片url
+    imgs: ['../img/img_big/杨洋-配图.jpg'], //状态图片url
     post_time: '2小时前', //信息发送时间
     liked_list: ['郑爽', '赵丽颖', '唐嫣', '杨幂', '何炅', '谢娜', '李维嘉', '吴昕', '杜海涛'], //点赞列表
     reply_list: [{
@@ -437,7 +437,7 @@ var friendData = {
     avatar: '../img/avatar/王思聪-头像.jpg', //头像url
     user_name: '王思聪', //用户名
     content: '{{nickname}}，和我在一起，明年还让你上春晚！', //文字内容
-    imgs: ['../img/img_big/王思聪-头像.jpg'], //状态图片url
+    imgs: ['../img/img_big/王思聪-配图.jpg'], //状态图片url
     post_time: '2小时前', //信息发送时间
     liked_list: ['林更新', '张予曦', '袁成杰', '杨颖', '叫兽易小星', '大鹏'], //点赞列表
     reply_list: [{
@@ -459,7 +459,7 @@ var friendData = {
     avatar: '../img/avatar/张天爱-头像.jpg', //头像url
     user_name: '张天爱', //用户名
     content: '27亿播放量，太子妃重新上架，感谢全国的老婆们~（飞吻表情）', //文字内容
-    imgs: ['../img/img_big/张天爱-头像.jpg'], //状态图片url
+    imgs: ['../img/img_big/张天爱-配图.jpg'], //状态图片url
     post_time: '2小时前', //信息发送时间
     liked_list: ['贾跃亭', '甘薇', '{{nickname}}', '侣皓吉吉', '盛一伦', '于朦胧', '郭俊辰', '江奇霖', '海铃'], //点赞列表
     reply_list: [{
@@ -680,7 +680,7 @@ var friendData = {
   }, {
     avatar: '../img/avatar/盛一伦-头像.jpg', //头像url
     user_name: '盛一伦', //用户名
-    content: '在我之后，又将有一位女神级演员登上春晚舞台——{{nickname}}，我们的共同点就是：都有一个尖下巴！', //文字内容
+    content: '这样拍照，要帅一点。', //文字内容
     imgs: ['../img/img_big/盛一伦-配图.jpg'], //状态图片url
     post_time: '2小时前', //信息发送时间
     liked_list: ['张天爱', '于朦胧', '{{nickname}}', '侣皓吉吉', '林更新', '何炅', '李维嘉'], //点赞列表
@@ -769,7 +769,7 @@ var friendData = {
 var listResult = shuffle(userInfo.sex == 1 ? friendData.man : friendData.woman, 4);
 
 listResult.forEach((item) => {
-  item.content = item.content && item.content.replace(/{{nickname}}/, userInfo.nickname)
+  item.content = item.content && item.content.replace(/{{nickname}}/g, userInfo.nickname)
   item.liked_list = item.liked_list.map((liked) => {
     if (liked == '{{nickname}}') {
       liked = liked.replace(/{{nickname}}/, userInfo.nickname);
@@ -777,7 +777,7 @@ listResult.forEach((item) => {
     return liked;
   })
   item.reply_list.forEach((reply) => {
-    reply.content = reply.content && reply.content.replace(/{{nickname}}/, userInfo.nickname)
+    reply.content = reply.content && reply.content.replace(/{{nickname}}/g, userInfo.nickname)
     reply.from = reply.from && reply.from.replace(/{{nickname}}/, userInfo.nickname)
     reply.to = reply.to && reply.to.replace(/{{nickname}}/, userInfo.nickname)
   })
