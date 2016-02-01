@@ -50,12 +50,20 @@ body {
   margin: 10px auto;
 }
 .shake_circle {
-  background-image: url(../img/circle.png);
-  -webkit-background-size: cover;
-  background-size: cover;
   width: 131px;
   height: 131px;
   margin: 0 auto;
+  position: relative;
+  border-radius: 50%;
+  background-color: #770000;
+}
+.shake_circle img{
+  width: 131px;
+  height: 131px;
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
 }
 .shake_hand {
   display: inline-block;

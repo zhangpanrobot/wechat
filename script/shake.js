@@ -117,10 +117,10 @@ document.addEventListener('DOMContentLoaded', function() {
   if (!code) {
     // alert('授权失败, 请从朋友圈重新进入本页面')
     userInfo = paramParseObj('userInfo');
-    location.href = friendLink();
+    // location.href = friendLink();
   } else {
     getUserInfo()
   }
   document.body.style.height = screenHeight + 'px';
-  
+
 })
