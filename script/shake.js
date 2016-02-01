@@ -59,9 +59,35 @@ var code = paramParse('code') //用户信息凭证
   // }
 
 var userInfo = localStorage.getItem('userInfo') && localStorage.getItem('userInfo') !== 'undefined' && JSON.parse(localStorage.getItem('userInfo')) || {};
+var boy_arr = ['奶岩','邓超','周杰伦','杨颖','易烊千玺','毕福剑','张馨予','王思聪','苍井空','太子妃张天爱','陈赤赤','金星','郭德纲','胡歌','彭阿姨','大鹏'];
+var girl_arr = ['HZT黄子韬','吴磊LEO','王俊凯','陈学冬','亦凡宝贝','杨洋','王思聪','张天爱','邓超','贾乃亮','李小璐','金星','李易峰','彭阿姨','贾玲','盛一伦','杨颖','毕福剑'];
+
+// 数组里随机选取n个
+function shuffle(array, num) {
+  var currentIndex = array.length,
+    temporaryValue, randomIndex;
+  // While there remain elements to shuffle...
+  while (0 !== currentIndex) {
+    // Pick a remaining element...
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex -= 1;
+    // And swap it with the current element.
+    temporaryValue = array[currentIndex];
+    array[currentIndex] = array[randomIndex];
+    array[randomIndex] = temporaryValue;
+  }
+  return array.slice(0, num);
+}
+
 
 function friendLink() {
-  return './index.html?userInfo=' + encodeURIComponent(JSON.stringify(userInfo));
+  var trendsList = []
+  if(userInfo.sex == 2) {
+    trendsList = shuffle(girl_arr, 5)
+  } else {
+    trendsList = shuffle(boy_arr, 5)
+  }
+  return './index.html?userInfo=' + encodeURIComponent(JSON.stringify(userInfo)) + '&trends=' + encodeURIComponent(trendsList.join());
 }
 
 //生成授权链接

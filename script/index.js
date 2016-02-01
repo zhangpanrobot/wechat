@@ -1061,9 +1061,27 @@ var speData = [{
       from: '康永哥'
     }]
 }];
+var randomList = [];
+var trendsList = decodeURIComponent(paramPair('trends'));
+if(trendsList && trendsList !== 'undefined') {
+  trendsList = trendsList.split(',');
+  if(userInfo.sex == 1) {
+    friendData.man.forEach(function(item) {
+      if(~trendsList.indexOf(item.user_name)) {
+        randomList[randomList.length] = item;
+      }
+    })
+  } else {
+    friendData.woman.forEach(function(item) {
+      if(~trendsList.indexOf(item.user_name)) {
+        randomList[randomList.length] = item;
+      }
+    })
+  }
+} else {
+  randomList = shuffle(userInfo.sex == 1 ? friendData.man : friendData.woman, 5);
+}
 
-
-var randomList = shuffle(userInfo.sex == 1 ? friendData.man : friendData.woman, 5);
 // var randomList = userInfo.sex == 1 ? friendData.man : friendData.woman;
 var postTimeList = ['1分钟前', '5分钟前', '20分钟前', '半小时前', '1小时前', '3小时前']
 
@@ -1260,15 +1278,18 @@ var friendCircle = new Vue({
       $('.modal').className = 'modal';
       $('.modal').innerHTML = '<img class="arrow" src="../img/jiantou.png" alt=""><div class="modal-container"><img class="share_bz" src="../img/baozou.png" alt=""></div>'
     });
+    var localUserInfo = localStorage.getItem('userInfo') && localStorage.getItem('userInfo') !== 'undefined' && JSON.parse(localStorage.getItem('userInfo')) || {};
     //跳转至用户授权页
     $('#share a').addEventListener('click', function(e) {
       e.preventDefault();
       //拿到appid, 生成随机state, scope为'snsapi_userinfo'
       var state = Math.random().toString(36).substr(2);
       var redirect_uri = encodeURIComponent('http://weixin.ezone.cn/view/shake.html');
-      setTimeout(function() {
+      if(localUserInfo && localUserInfo.nickname) {
+        location.href = '../shake.html';
+      } else {
         location.href = generateRedirectUrl('wx693582460d15cb5e', redirect_uri, 'snsapi_userinfo', state);
-      }, 50);
+      }
     })
   }
 })
