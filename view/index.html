@@ -16,8 +16,7 @@
 <body>
   <!-- 主体 -->
   <header class="_show header_bg">
-    <img src="../img/monkey_share.jpg" alt="" style="display: none;">
-    <!-- <img src="http://s.juancdn.com/jpwebapp/images/pengyouquan/bg.jpg" id="bg"> -->
+    <img src="../img/monkey_share.jpg" alt="" style="visibility: hidden;">
     <p class="data-name" id="user-name"></p>
     <img src="" class="data-avt" id="avt">
   </header>
@@ -40,12 +39,18 @@
     </div>
     <div id="share" class="_show">
       <a href=''>我也要测</a>
-      <a>分享到朋友圈</a>
+      <a id="share_to_friend">分享到朋友圈</a>
       <p>（此朋友圈纯属虚构）</p>
     </div>
     <div class="hide" id="guide"></div>
   </div>
-  <div class="modal hide">
+  <!-- <div class="modal">
+    <img class="arrow" src="../img/jiantou.png" alt="">
+    <div class="modal-container">
+      <img class="share_bz" src="../img/baozou.png" alt="">
+    </div>
+  </div> -->
+  <div class="modal hide" id="modal-share">
     <div class="modal-container"></div>
   </div>
   <script src="../dist/vue.min.js"></script>

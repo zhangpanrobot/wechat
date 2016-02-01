@@ -6,20 +6,21 @@
       <div class="po-cmt">
           <div class="po-hd">
               <!-- 广告 -->
-              <p v-if="data.isAd" class="ads">推广<img src="http://s.juancdn.com/jpwebapp/images/pengyouquan/ads.png" ></p>
+              <p v-if="data.isAd" class="ads"><a :href="data.link">推广<img src="../img/ads.png"></a></p>
               <p class="po-name">{{data.user_name}}</p>
-              <div class="post"><p>
+              <div class="post">
                 {{{data.content}}}
-              </p>
-                  <!-- <a href="http://mp.weixin.qq.com/s?__biz=MjM5MDk1NjY0MA==&mid=402311636&idx=2&sn=35581e3c9fca720903919a0e23bf4846#rd" class="ad-link">查看详情 <img src="http://s.juancdn.com/jpwebapp/images/pengyouquan/link.png"></a> -->
-                  <img v-for="img in data.imgs" :src="img" class="list-img">
               </div>
-              <p class="time">{{data.post_time}}</p><img src="http://s.juancdn.com/jpwebapp/images/pengyouquan/c.png" class="c-icon">
+              <img v-for="img in data.imgs" :src="img" class="list-img" :class="{'ad-img':data.isAd}">
+              <p>
+                <a v-if="data.isAd" :href="data.link" class="ad-link">查看详情 <img src="../img/link.png"></a>
+              </p>
+              <p class="time">{{data.post_time}}</p><img src="../img/c.png" class="c-icon">
           </div>
           <div class="r"></div>
           <!-- 点赞及回复列表 -->
           <div class="cmt-wrap">
-              <div v-if="data.liked_list.length" class="like"><img src="http://s.juancdn.com/jpwebapp/images/pengyouquan/l.png"><span class="data-name"></span>{{data.liked_list}}</div>
+              <div v-if="data.liked_list.length" class="like"><img src="../img/l.png"><span class="data-name"></span>{{data.liked_list}}</div>
               <div class="cmt-list">
                   <p v-for="reply_item in data.reply_list">
                     <span v-if="reply_item.from">{{reply_item.from}}<i> 回复 </i></span>

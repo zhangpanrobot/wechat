@@ -310,7 +310,7 @@ var friendData = {
     avatar: '../img/avatar/吴磊-头像.jpg', //头像url
     user_name: '吴磊LEO', //用户名
     content: '{{nickname}}姐姐，等我十年可好？', //文字内容
-    imgs: ['../img/img_big/吴磊-头像.jpg'], //状态图片url
+    imgs: ['../img/img_big/吴磊-配图.jpg'], //状态图片url
     post_time: '2小时前', //信息发送时间
     liked_list: ['胡歌', '靳东', '霍建华', '刘涛', '柳岩', '贾玲'], //点赞列表
     reply_list: [{
@@ -713,24 +713,20 @@ var friendData = {
     post_time: '2小时前', //信息发送时间
     liked_list: ['郑恺', '晓明', '黄渤', '陈坤', '井柏然', '陈赤赤', '李晨', '鹿晗', '何炅'], //点赞列表
     reply_list: [{
-        content: '晓明会做饭吗！也就海边捞点嘎啦', //回复内容
+        content: '晓明会做饭吗！也就会做个西红柿鸡蛋面，哈哈哈哈', //回复内容
         from: '', //回复人姓名
-        to: '黄渤' //被回复人姓名
-      }, {
-        content: '就会做个西红柿鸡蛋面，哈哈哈哈', //回复内容
-        to: '黄渤', //被回复人姓名
-        from: '井柏然'
+        to: '井柏然' //被回复人姓名
       }, {
         content: 'Baby 我又来赞你啦~~', //回复内容
         from: '',
         to: '郑恺' //被回复人姓名
       }, {
-        content: '渤哥也一起来喝点啊',
-        from: '晓明',
-        to: '黄渤'
-      }, {
-        content: '谢谢嫂子！直播结束就去你家，我带上丽颖一块儿（害羞表情）饭还是让丽颖做',
+        content: '谢谢Baby！直播结束就去你家，我带上那谁一块儿',
         from: '',
+        to: '{{nickname}}'
+      }, {
+        content: '好！欢迎Mr凡~~',
+        from: '杨颖',
         to: '{{nickname}}'
       }] //回复列表
   }, {
@@ -795,6 +791,8 @@ var adData = {
   imgs: ['../img/img_big/夺宝联萌-配图.gif'], //状态图片url
   post_time: '2小时前', //信息发送时间
   liked_list: ['王思聪', '叫兽易小星', '杨颖', '林更新', '陈赫', '郑恺'], //点赞列表
+  isAd: true,
+  link: 'http://dblm.ezone.cn/',
   reply_list: [{
       content: '来找我谈谈熊猫TV直播的事', //回复内容
       from: '', //回复人姓名
@@ -905,19 +903,29 @@ var friendCircle = new Vue({
   ready() {
     getConfig();
     $('title').innerText = '听说' + userInfo.nickname + '要上春晚，朋友圈竟然变这样!';
+    //图片放大
     $('#list').addEventListener('click', function(e){
       var target = e.target;
-      if(target.className == 'list-img') {
+      if(target.className == 'list-img ad-img') {
         $('.modal').className = 'modal';
+
         $('.modal-container').innerHTML = '<img src=' + target.src + '>';
+        document.body.style.overflow = 'hidden';
       }
     });
+    //取消
     $('.modal').addEventListener('click', function(e) {
       this.className = 'modal hide';
-      $('.modal-container').innerHTML = '';
-    })
+      $('.modal').innerHTML = '<div class="modal-container"></div>'
+      document.body.style.overflow = 'scroll';
+    });
     //随机背景
     randomBg();
+    //点击分享
+    $('#share_to_friend').addEventListener('click', function(e){
+      $('.modal').className = 'modal';
+      $('.modal').innerHTML = '<img class="arrow" src="../img/jiantou.png" alt=""><div class="modal-container"><img class="share_bz" src="../img/baozou.png" alt=""></div>'
+    });
     //跳转至用户授权页
     $('#share a').addEventListener('click', function(e) {
       e.preventDefault();

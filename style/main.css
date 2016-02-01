@@ -105,7 +105,6 @@ body {
 }
 #share_link{
   display: block;
-  width: 50%;
   margin: 0 auto;
 }
 .result_content {
@@ -140,6 +139,8 @@ body {
 }
 .result_p {
   font-size: 20px;
+  margin-top: 30px;
+  color: #333;
 }
 i {
   font-style: normal;
@@ -3269,7 +3270,7 @@ b{
   height: 100%;
   top: 0;
   left: 0;
-  background: rgba(51,51,51,.6);
+  background: rgba(0, 0, 0,.7);
   z-index: 1000;
 }
 .modal-container {
@@ -3286,8 +3287,21 @@ b{
     -webkit-transition: opacity .3s ease;
     transition: opacity .3s ease;
 }
-.modal img{
-  width: 100%;
+.modal-container img{
+    width: 100%;
+    top: 50%;
+    position: absolute;
+    transform: translate3d(-50%, -50%, 0);
+    -webkit-transform: translate3d(-50%, -50%, 0);
+}
+.modal .share_bz{
+  width: 90%;
+}
+.modal .arrow{
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 40%;
 }
 
 .banner{
@@ -3296,4 +3310,16 @@ b{
 #result-title{
   display: inline-block;
   vertical-align: -20px;
+}
+.ad-link img{
+  width: 12px;
+  padding: 0;
+  display: inline-block;
+  margin: 3px 3px 0 0;
+  padding: 0;
+  overflow: hidden;
+}
+.result_img{
+  width: 60%;
+  margin: 20px auto;
 }
