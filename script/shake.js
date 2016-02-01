@@ -71,6 +71,18 @@ function friendLink() {
   return './index.html?userInfo=' + encodeURIComponent(JSON.stringify(userInfo));
 }
 
+//生成授权链接
+function generateRedirectUrl(appid, url, scope, state) {
+  return 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=' + appid + '&redirect_uri=' + url + '&response_type=code&scope=' + scope + '&state=' + state + '#wechat_redirect';
+}
+
+function toAuth() {
+  var state = Math.random().toString(36).substr(2);
+  var redirect_uri = encodeURIComponent('http://weixin.ezone.cn/view/shake.html');
+  location.href = generateRedirectUrl('wx693582460d15cb5e', redirect_uri, 'snsapi_userinfo', state);
+}
+
+
 //用code请求用户信息
 function getUserInfo() {
   if (userInfo && userInfo.nickname) {
@@ -81,19 +93,24 @@ function getUserInfo() {
     sendRequest('/getUserInfo.do?code=' + code, 'GET', '', function(data) {
       if (!data.fail) {
         data = JSON.parse(data)
-        if (data.errcode) return;
+        if (data.errcode) {
+            alert(errcode)
+        }
         userInfo = data.data;
         // localStorage.setItem('userInfo', JSON.stringify(userInfo));
-        location.href += '&userInfo=' + encodeURIComponent(JSON.stringify(userInfo));
+        // location.href += '&userInfo=' + encodeURIComponent(JSON.stringify(userInfo));
         $('#user_name').innerText = userInfo.nickname;
         //立即查看
         $('#share_link').href = friendLink()
       } else {
+        toAuth()
         // location.href = friendLink();
       }
     })
   }
 }
+
+
 
 
 document.addEventListener('DOMContentLoaded', function() {
