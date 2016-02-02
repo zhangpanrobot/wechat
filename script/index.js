@@ -70,6 +70,25 @@ $('#avt').src = userInfo.headimgurl;
 
 var friendData = {
   man: [{
+    avatar: '../img/avatar/王自健-头像.jpg', //头像url
+    user_name: '王自健', //用户名
+    content: '送你们一个敬业福，感觉胸前的红领巾更鲜艳了！', //文字内容
+    imgs: ['../img/img_big/王自健-配图.jpg'], //状态图片url
+    post_time: '2小时前', //信息发送时间
+    liked_list: ['王建国','蛋蛋','贾玲','沈腾','马丽','秦浇水'], //点赞列表
+    reply_list: [{
+        content: '王哥，你通过一下我的支付宝好友申请呗!', //回复内容
+        from: '', //回复人姓名
+        to: '蛋蛋' //被回复人姓名
+      }, {
+        content: '你TM逗我玩呢啊！！！', //回复内容
+        to: '王建国' //被回复人姓名
+      }, {
+        content: '我还缺富强福呢 你有多的吗', //回复内容
+        from: '',
+        to: '贾玲' //被回复人姓名
+      }] //回复列表
+  }, {
     avatar: '../img/avatar/柳岩-头像.jpg', //头像url
     user_name: '奶岩', //用户名
     content: '{{nickname}}你要上春晚啦！带上我好不咯？ 么么哒！', //文字内容
@@ -533,6 +552,25 @@ var friendData = {
     }]
   }],
   woman: [{
+    avatar: '../img/avatar/王自健-头像.jpg', //头像url
+    user_name: '王自健', //用户名
+    content: '送你们一个敬业福，感觉胸前的红领巾更鲜艳了！', //文字内容
+    imgs: ['../img/img_big/王自健-配图.jpg'], //状态图片url
+    post_time: '2小时前', //信息发送时间
+    liked_list: ['王建国','蛋蛋','贾玲','沈腾','马丽','秦浇水'], //点赞列表
+    reply_list: [{
+        content: '王哥，你通过一下我的支付宝好友申请呗!', //回复内容
+        from: '', //回复人姓名
+        to: '蛋蛋' //被回复人姓名
+      }, {
+        content: '你TM逗我玩呢啊！！！', //回复内容
+        to: '王建国' //被回复人姓名
+      }, {
+        content: '我还缺富强福呢 你有多的吗', //回复内容
+        from: '',
+        to: '贾玲' //被回复人姓名
+      }] //回复列表
+  }, {
     avatar: '../img/avatar/黄子韬-头像.jpg', //头像url
     user_name: 'HZT黄子韬', //用户名
     content: '非常期待{{nickname}}姐在春晚的演出，我也要向{{nickname}}姐学习，坚持！努力！早晚有一天，我也会登上春晚的舞台！', //文字内容
@@ -1172,7 +1210,7 @@ listResult.forEach(function(item, index) {
 });
 // 随机背景图
 function randomBg() {
-  var randomBg = Math.ceil(Math.random() * 14);
+  var randomBg = Math.ceil(Math.random() * 13);
   console.log(randomBg)
   $('._show').style.backgroundImage = 'url(../img/img_big/' + (randomBg || 1) + '.jpeg)';
 }
@@ -1254,14 +1292,14 @@ var friendCircle = new Vue({
   },
   ready() {
     getConfig();
+    var screenWidth = document.body.clientWidth;
     $('title').innerText = '听说' + userInfo.nickname + '要上春晚，朋友圈竟然变这样!';
     //图片放大
     $('#list').addEventListener('click', function(e) {
       var target = e.target;
       if (target.className == 'list-img ad-img') {
         $('.modal').className = 'modal';
-
-        $('.modal-container').innerHTML = '<img src=' + target.src + '>';
+        $('.modal-container').innerHTML = '<img style="width:' + screenWidth + 'px;margin-left:' + -screenWidth/2 + 'px;margin-top: '+ -(18/64)*screenWidth +'px;" src=' + target.src + '>';
         document.body.style.overflow = 'hidden';
       }
     });

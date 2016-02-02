@@ -3298,19 +3298,17 @@ b{
     opacity: 1;
     -webkit-transition: opacity .3s ease;
     transition: opacity .3s ease;
+    width: 100%;
 }
 .modal-container img{
     width: 100%;
     top: 50%;
+    left: 50%;
     position: absolute;
-    transform: translate3d(-50%, -50%, 0);
-    -webkit-transform: translate3d(-50%, -50%, 0);
+    display: block;
 }
-.modal .share_bz{
+.modal-container .share_bz{
   width: 278px;
-  display: block;
-  left: 50%;
-  transform: none;
   margin-left: -139px;
   margin-top: -59px;
 }
