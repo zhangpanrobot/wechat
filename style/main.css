@@ -3307,7 +3307,12 @@ b{
     -webkit-transform: translate3d(-50%, -50%, 0);
 }
 .modal .share_bz{
-  width: 90%;
+  width: 278px;
+  display: block;
+  left: 50%;
+  transform: none;
+  margin-left: -139px;
+  margin-top: -59px;
 }
 .modal .arrow{
   position: absolute;
