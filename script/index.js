@@ -1311,6 +1311,20 @@ var friendCircle = new Vue({
     });
     //随机背景
     randomBg();
+    randomView();
+    //生成随机浏览量
+
+    function fRandomBy(under, over){
+        switch(arguments.length){
+            case 1: return parseInt(Math.random()*under+1);
+            case 2: return parseInt(Math.random()*(over-under+1) + under);
+            default: return 0;
+        }
+    }
+    function randomView() {
+      var randomNum = fRandomBy(2500000, 5000000);
+      $('#people_num') && ($('#people_num').innerText = randomNum);
+    }
     //点击分享
     $('#share_to_friend').addEventListener('click', function(e) {
       $('.modal').className = 'modal';

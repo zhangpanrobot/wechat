@@ -3227,12 +3227,12 @@ b{
 }
 #share a{
     border-radius: 5px;
-    background-color: #26337e;
+    background-color: #d51a12;
     color: #ffffff;
     text-align: center;
     display: inline-block;
-    line-height: 2.5;
-    font-size: 14px;
+    line-height: 3;
+    font-size: 18px;
     width: 138px;
     margin: 0 10px;
 }
@@ -3247,7 +3247,7 @@ b{
     margin-right: -148px;
 }
 #share p{
-    padding: 45px 0 10px;
+    padding: 65px 0 10px;
     color: #999999;
     text-align: center;
 }
@@ -3340,4 +3340,17 @@ b{
 }
 #share{
   margin-top: 20px;
+}
+
+.text-center{
+  text-align: center;
+  padding-top: 10px;
+}
+.text-center i{
+  color: #576b95;
+  font-style: normal;
+}
+.text-center p{
+  margin: 4px 0;
+  font-size: 18px;
 }
