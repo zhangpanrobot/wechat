@@ -9,7 +9,7 @@ if (!userInfo || userInfo == 'undefined' || !nickname) {
     "city": "海淀",
     "province": "北京",
     "country": "中国",
-    "headimgurl": "http://wx.qlogo.cn/mmopen/XRES4dfLkwm9vicNBB0RaVqiaEImQibGDGvIerBPSk3HXMIZiaA6WRsrZS7DBvMj7myykBtcbJ9NyxYJm98q0gJ6ba2Sib6icBzt0f/0",
+    "headimgurl": "../img/avatar/夺宝联萌-头像.jpg",
     "privilege": []
   }
 }
