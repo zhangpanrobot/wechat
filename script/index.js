@@ -1172,7 +1172,7 @@ listResult.forEach((item) => {
 var adData = {
   avatar: '../img/avatar/夺宝联萌-头像.jpg', //头像url
   user_name: '夺宝联萌', //用户名
-  content: '全新SRPG沙盒对战手游<br>今日强势登陆AppStore', //文字内容
+  content: '沙盒对战手游《夺宝联萌》<br>今日强势登陆AppStore', //文字内容
   imgs: ['../img/img_big/夺宝联萌-配图.gif'], //状态图片url
   post_time: '2小时前', //信息发送时间
   liked_list: ['王思聪', '叫兽易小星', '杨颖', '林更新', '陈赫', '郑恺'], //点赞列表
